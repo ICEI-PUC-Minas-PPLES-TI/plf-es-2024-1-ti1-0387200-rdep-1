@@ -1,18 +1,20 @@
-# Nome do projeto
+ RdEP (Reingresso de EX-presidiarios no mercado de trabalho)
 
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+o nosso projeto tem como objetivo reingressar ex-presidiarios ao mercado de trabalho assim buscando diminuir a taxa de reincidencia criminal.
+
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Alexandre Bernardes
+* Raphael Sena
+* Raul Cardoso Siqueira
+* Victor Rocha
+* Vinicius Trevisani 
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Diego Algusto
+* Luiz Henrique Costa
 
 ## Instruções de utilização
 
