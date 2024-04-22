@@ -38,12 +38,16 @@ Relacione as personas identificadas no seu projeto e os respectivos mapas de emp
 
 ## Histórias de Usuários
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+• Como ex-presidiário, eu quero encontrar oportunidades de trabalho que sejam 
+compatíveis com minhas habilidades e experiências, para que eu possa me 
+reintegrar à sociedade com sucesso.
 
-**Links Úteis**:
+• Como empregador, eu quero encontrar candidatos qualificados com experiência 
+em diferentes áreas, para que eu possa contratar a pessoa certa para o trabalho.
 
-- [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-- [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
+• Como oficial de condicional, eu quero acompanhar o progresso dos ex-presidiários 
+que estão sob minha supervisão, para que eu possa ajudá-los a se reintegrar à 
+sociedade com sucesso
 
 ## Requisitos
 
