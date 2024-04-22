@@ -1,63 +1,29 @@
-# Documentação do Projeto (TIDocs)
-
-Esta pasta armazena a documentação do projeto para a disciplina de **Trabalho Interdisciplinar 1** dos cursos de Tecnologia da Informação da **[PUC Minas](https://pucminas.br)**. Essa documentação é estruturada na forma de um site que fica disponível por meio do GitHub Pages e pode ser incluído, também, no site da solução hospedada. Um [exemplo publicado do TIDocs](https://webtech-puc-minas.github.io/ti1-template/) está disponível por meio do repositório do **[WebTech PUC Minas](https://github.com/webtech-pucminas)**.
-
-A documentação do projeto inclui as seguintes seções:
-
-1. Introdução
-2. Contexto
-3. Concepção
-4. Metodologia
-5. Solução
-6. FAQ (Questões frequentes)
-7. Referências Bibliográficas
-
-O template para o site é estruturado e permite que a equipe evolua a documentação do projeto à medida que avance no desenvolvimento.
-
-# Orientações gerais
-
-Esta seção traz explicações breves sobre o conjunto de artefatos que precisam ser incluídos na documentação do projeto com uma conjunto de links importantes para que se entenda como criar cada coisa. 
-
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-**Links Úteis**:
-
-- [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-- [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-- [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+O reingresso de ex-presidiários e presidiários no mercado de trabalho é dificultado pelo preconceito social e pela falta de oportunidades educacionais e de emprego. Esse estigma cria um ciclo de reincidência criminal, pois a falta de emprego perpetua a exclusão desses indivíduos. Para que haja uma reintegração bem-sucedida, é necessário um esforço coletivo que inclua oportunidades de emprego, apoio social, educação e treinamento profissional. Superar os preconceitos e investir em programas de reabilitação e inclusão no local de trabalho não apenas beneficia os indivíduos envolvidos, mas também promove uma sociedade mais justa e equitativa. Após muita pesquisa e diversas entrevistas, percebemos que o real problema a ser combatido é a REINCIDÊNCIA CRIMINAL, que é a soma de diversos fatores:
+- A falta de educação básica ou profissionalizante é um desses fatores, pois no nosso país a maioria dos presos são jovens que ainda não concluíram ou apenas abandonaram os estudos. Tendo isso em vista, o sistema os trata apenas como reclusos e não como mentes pensantes, então não garantem ao preso uma oportunidade de encerramento de seus estudos, seja de nível básico, médio ou superior.
+- O grande preconceito enfrentado por essa parcela da população leva-os a enfrentar diversos problemas e dificuldades ao encontrar um emprego digno e formal, o que os impede de realmente reintegrarem na sociedade ativa.
+- Outro grande motivo dessa alta taxa de reincidência criminal é o fato de, após serem "soltos", esses ex-presidiários não terem economia ou poupança, e em alguns casos piores, nem mesmo familiares que possam ajudá-los. Assim, são livres "para serem mendigos", o que acaba levando à frustração com o mundo livre e os fazem voltar ao mundo do crime.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
-
-**Links Úteis**:
-
-- [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O objetivo principal do nosso sistema é diminuir a reincidência criminal na população de ex-presidiários brasileira. Trazendo a eles a capacidade de terminarem seus estudos e a possibilidade de encontrarem um verdadeiro emprego estável, onde possam seguir com suas carreiras em meio a um regime de CLT com todos os direitos atribuídos a um cidadão livre.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A reincidência criminal é um problema global, mas no Brasil os números são elevados. Cerca de 70% das pessoas que já foram presas retornam aos presídios. O grupo acredita que a causa de um número tão grande não é que "criminoso é criminoso", mas sim que há algo mais profundo gerando essa estatística. Como conhecedor de ex-presidiários, podemos dizer que a maioria das pessoas sai da cadeia querendo buscar melhoria de vida, e que esse sonho é muitas das vezes impedido pelos problemas tratados anteriormente.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Isso sem contar nos atuadores diversos nesse sistema, como os reclusos em regima semi-aberto, ou até mesmo os surpevisores dos mesmo, e/ou de forncedores de serviços comunitários.
 
-**Links Úteis**:
-
-- [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+O público alvo de nossa aplicação são os detentos, ex-presidiários, empresas públicas ou privadas e também os surpevisores de serviços comunitários ou regime semi-aberto. Pode-se contar que no geral todos nossos usuários terão de pouca a nenhuma experiêcia no mercado digital visto que se trata de reclusos e pessoas mais velhas que alcaçam cargos de superioriadade tanto nos tribunais quanto nas empresas. Por isso a equipe se dedicou a construir telas limpas e intuitivas para cada um dos seus usuários finais.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
-
-**Links Úteis**:
-
-- [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-- [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+- Ex-detentos utilizarão a plataforma pra encontrarem um serviço que os aceite e/ou se educar, como compltar o ensino básico, e obter novos conhecimentos pelo meio EaD;
+- Detentos em Regime semi-aberto ou prestadores comunitários, usarão a plataforma para os mesmos fins, acrescidos da oportunidade de serem pagos e vazerem assim um "vaquinha" para quando forem soltos;
+- Recrutadores e empresas utilizarão o sistema para encontrarem, serviçais proximos e que podem trabalhar de prontidão, desde que o serviço atenda as suas capacidades, intelectuais ou físicas;
+- Por fim, os monitores e agentes do judiciário, utilizarão do app, para terem um registro completo de como anda aquele tal individuo, e quais contratos ele tem assinado, tendo acesso a dados como, EMPREGADOR, EMPREGADO, DATA DE INICIO, DATA DE TÉRMINO, PONTOS DO FUNCIONARIO, entre outros.
 
 ## Personas
 
