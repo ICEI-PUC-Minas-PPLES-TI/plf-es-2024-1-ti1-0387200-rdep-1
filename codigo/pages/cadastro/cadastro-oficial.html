@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Oficial de Justiça</title>
+</head>
+<body>
+    <main>
+        <h1>Cadastro Oficial de Justiça</h1>
+        <form class="form" action="#" method="post">
+                
+            <div class="form_grupo">
+                <label for="nome" class="form_label">Nome</label>
+                <input type="text" name="nome" class="form_input" id="nome" placeholder="Nome Completo" required>
+            </div>
+            
+            <div class="form_grupo">
+                <label for="e-mail" class="form_label">Email</label>
+                <input type="email" name="email" class="form_input" id="email" placeholder="seuemail@email.com" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="cpf" class="form_label">CPF</label>
+                <input type="text" name="cpf" class="form_input" id="cpf" placeholder="CPF" required>
+            </div>
+
+            <div class="form_grupo">
+                <label for="rg" class="form_label">RG</label>
+                <input type="text" name="rg" class="form_input" id="rg" placeholder="RG" required>
+            </div>
+            
+            <div class="form_grupo">
+                <label for="data-nascimento" class="form_label">Data de Nascimento</label>
+                <input type="date" name="data-nascimento" class="form_input" id="data-nascimento" placeholder="Data de Nascimento" required>
+            </div>       
+            
+            <div class="form_grupo">
+                <label for="carteira-funcional" class="form_label">Carteira Funcional</label>
+                <input type="text" name="carteira-funcional" class="form_input" id="carteira-funcional" placeholder="Nº Carteira Funcional" required>
+            </div>    
+
+            <div class="form_grupo">
+                <span class="sexo">Sexo:</span>
+                
+                <div class="radio-btn">
+                    <input type="radio" class="form_new_input" id="masculino" name="sexo" value="Masculino" required="required">
+                    <label for="masculino" class="radio_label form_label"> <span class="radio_new_btn"></span> Masculino</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" class="form_new_input" id="feminino" name="sexo" value="Feminino" required="required">
+                    <label for="feminino" class="radio_label form_label"> <span class="radio_new_btn"></span> Feminino</label>
+                </div>
+                <div class="radio-btn">
+                    <input type="radio" class="form_new_input" id="prefiro-nao-responder" name="sexo" value="prefiro-nao-responder" required="required">
+                    <label for="prefiro-nao-responder" class="radio_label form_label"> <span class="radio_new_btn"></span> Prefiro não responder</label>
+                </div>
+            </div>
+
+            <div class="submit">
+                <input type="hidden" name="acao" value="enviar">
+                <button type="submit" name="Submit" class="submit_btn" >Cadastrar</button>
+            </div>
+        </form>
+        <a href="/codigo/pages/login/login.html">Voltar</a>
+    </main>
+</body>
+</html>
