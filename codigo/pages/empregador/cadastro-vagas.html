@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro Vagas</title>
+  </head>
+  <body>
+    <main>
+      <h1>Cadastro de Vagas</h1>
+      <form action="">
+        <fieldset>
+          <legend>Cadastro de Vagas</legend>
+          <table>
+            <tr>
+                <td>
+                  <legend>Título da Vaga</legend>
+                  <textarea
+                    name="titulo-vaga"
+                    id="titulo-vaga"
+                    cols="30"
+                    rows="1"
+                  ></textarea>
+                </td>
+              </tr>
+            <tr>
+              <td>
+                <legend>Sobre a Vaga</legend>
+                <textarea
+                  name="sobre-a-vaga"
+                  id="sobre-a-vaga"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <legend>Benefícios:</legend>
+                <form action="">
+                  <td>
+                    <input
+                      type="text"
+                      name="beneficio1"
+                      class="form_input"
+                      id="beneficio"
+                      placeholder="Benefício 1"
+                      required
+                    />
+                    <input
+                      type="text"
+                      name="beneficio2"
+                      class="form_input"
+                      id="beneficio"
+                      placeholder="Benefício 2"
+                    />
+                    <input
+                      type="text"
+                      name="beneficio3"
+                      class="form_input"
+                      id="beneficio"
+                      placeholder="Benefício 3"
+                    />
+                  </td>
+                </form>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <legend>Imagem de Fundo</legend>
+                </td>
+                <td>
+                    <input type="file" name="arquivos" class="btn btn-success"  accept="image/png, image/jpeg"  multiple /> 
+                </td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+    </main>
+
+    <script src="/codigo/assets/js/cadastro-vagas/cadastroVagas.js"></script>
+  </body>
+</html>
