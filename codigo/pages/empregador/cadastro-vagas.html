@@ -22,22 +22,22 @@
             <tr>
               <td>
                 <legend>Título da Vaga</legend>
-                <textarea name="titulo-vaga" cols="30" rows="1" required></textarea>
+                <textarea id="titulo-vaga" name="titulo-vaga" cols="30" rows="1" required></textarea>
               </td>
             </tr>
             <tr>
               <td>
                 <legend>Sobre a Vaga</legend>
-                <textarea name="sobre-a-vaga" cols="30" rows="5" required></textarea>
+                <textarea id="sobre-a-vaga" name="sobre-a-vaga" cols="30" rows="5" required></textarea>
               </td>
             </tr>
             <tr>
               <td>
                 <legend>Benefícios:</legend>
                 <div>
-                  <input type="text" name="beneficio1" class="form_input" placeholder="Benefício 1" required />
-                  <input type="text" name="beneficio2" class="form_input" placeholder="Benefício 2" />
-                  <input type="text" name="beneficio3" class="form_input" placeholder="Benefício 3" />
+                  <input type="text" id="beneficio1" name="beneficio1" class="form_input" placeholder="Benefício 1" required />
+                  <input type="text" id="beneficio2" name="beneficio2" class="form_input" placeholder="Benefício 2" />
+                  <input type="text" id="beneficio3" name="beneficio3" class="form_input" placeholder="Benefício 3" />
                 </div>
               </td>
             </tr>
@@ -48,7 +48,10 @@
         <button id="add-new-form" class="btn btn-primary">Adicionar Nova Vaga</button>
       </form>
     </div>
+
+    <h2>Formulários Enviados</h2>
+    <button id="view-stored-data" class="btn btn-info">Ver Dados das Vagas</button>
   </main>
-  <script src="/codigo/assets/js//cadastro/cadastro-vagas/cadastroVagas.js"></script>
+  <script src="/codigo/assets/js/cadastro/cadastro-vagas/cadastroVagas.js"></script>
 </body>
 </html>

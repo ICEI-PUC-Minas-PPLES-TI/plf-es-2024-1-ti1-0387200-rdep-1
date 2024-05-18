@@ -3,6 +3,7 @@ body {
   }
   
   .container {
+    display: grid;
     padding: 20px;
     margin-top: 50px;
   }
@@ -20,6 +21,10 @@ body {
   h1 {
     color: #007bff;
     margin-bottom: 20px;
+  }
+
+  h2 {
+    margin-top: 10px;
   }
 
   #forms-container > form > fieldset > table {
@@ -76,4 +81,10 @@ body {
     border-radius: 5px;
     margin-bottom: 10px;
   }
+
+   main {
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+   }
   
