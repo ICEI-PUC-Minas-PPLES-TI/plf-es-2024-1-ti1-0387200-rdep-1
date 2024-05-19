@@ -18,10 +18,32 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
   
+       // Verificar duplicatas antes de salvar
+      if (isDuplicateCarteiraFuncional(jsonData)) {
+        alert('Erro: Essa carteira funcional já foi utilizada em outro cadastro!');
+      } 
+      else if (isDuplicateEmail(jsonData)) {
+        alert('Erro: Esse e-mail já foi utilizado em outro cadastro!');
+      }
+       else {
         // Salvar os dados no localStorage
         saveToLocalStorage(jsonData);
-      });
-    }
+      }
+    });
+  }
+
+  // Função para verificar duplicidade de carteiras funcionais
+  function isDuplicateEmail(newData) {
+    let storedData = JSON.parse(localStorage.getItem('cadastroOficiais')) || [];
+    return storedData.some(data => data.email === newData.email);
+  }
+
+  
+  // Função para verificar duplicidade de email
+  function isDuplicateCarteiraFuncional(newData) {
+    let storedData = JSON.parse(localStorage.getItem('cadastroOficiais')) || [];
+    return storedData.some(data => data['carteira-funcional'] === newData['carteira-funcional']);
+  }
   
     // Função para salvar dados no localStorage
     function saveToLocalStorage(data) {
