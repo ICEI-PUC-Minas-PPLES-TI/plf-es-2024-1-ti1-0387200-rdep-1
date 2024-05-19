@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Adiciona mensagem de sucesso
       alert('Cadastro realizado com sucesso!');
 
-      window.location.href = '/codigo/pages/login/login.html';
+      window.location.href = '/codigo/index.html';
   
       // Limpar campos do formulário
       const form = document.querySelector('.form');
