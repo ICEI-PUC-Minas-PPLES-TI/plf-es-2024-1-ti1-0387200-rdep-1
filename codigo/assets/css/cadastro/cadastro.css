@@ -124,6 +124,19 @@
   table select {
     width: 100%;
   }
+
+  body > main > a {
+    margin-bottom: 10px !important;
+  }
+
+  #profiles > div {
+    display: block !important;
+    margin-bottom: 10px;
+  }
+
+  #profiles > div > p {
+
+  }
   
   /* Mídia para telas menores */
   @media screen and (max-width: 600px) {
