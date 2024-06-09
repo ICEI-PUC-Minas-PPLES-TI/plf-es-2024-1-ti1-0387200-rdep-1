@@ -1,54 +1,78 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const profileForm = document.getElementById('profileForm');
-    if (profileForm) {
-        profileForm.addEventListener('submit', function(event) {
-            event.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    function loadProfileSelector() {
+        const profileSelector = document.getElementById('profileSelector');
+        let storedData = JSON.parse(localStorage.getItem('cadastroClientes')) || [];
 
-            const profileData = {
-                nome: document.getElementById('nome').value,
-                cpf: document.getElementById('cpf').value,
-                rg: document.getElementById('rg').value,
-                dataNascimento: document.getElementById('data-nascimento').value,
-                estadoCivil: document.querySelector('select[name="estadocivil"]').value,
-                telefone: document.getElementById('telefone').value,
-                sexo: document.querySelector('input[name="sexo"]:checked').value,
-                rua: document.querySelector('input[name="rua"]').value,
-                numero: document.querySelector('input[name="numero"]').value,
-                bairro: document.querySelector('input[name="bairro"]').value,
-                estado: document.querySelector('select[name="estado"]').value,
-                cidade: document.querySelector('input[name="cidade"]').value,
-                cep: document.querySelector('input[name="cep"]').value,
-                matriculaDetento: document.getElementById('matricula-detento').value,
-                email: document.getElementById('email').value,
-                senha: document.getElementById('senha').value
-            };
+        storedData.forEach((data, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = data['nome'] || `Perfil ${index + 1}`;
+            profileSelector.appendChild(option);
+        });
 
-            localStorage.setItem('profile', JSON.stringify(profileData));
+        profileSelector.addEventListener('change', displaySelectedProfile);
+    }
 
-            window.location.href = 'profile.html';
+    function displaySelectedProfile() {
+        const profileSelector = document.getElementById('profileSelector');
+        const selectedIndex = profileSelector.value;
+        let storedData = JSON.parse(localStorage.getItem('cadastroClientes')) || [];
+        const selectedProfile = storedData[selectedIndex];
+
+        const profileDiv = document.getElementById('profile');
+        profileDiv.innerHTML = formatFormData(selectedProfile);
+
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Editar';
+        editButton.addEventListener('click', () => editProfile(selectedIndex));
+        profileDiv.appendChild(editButton);
+    }
+
+    function formatFormData(data) {
+        return `
+            <p><strong>Nome:</strong> ${data['nome']}</p>
+            <p><strong>Data de Nascimento:</strong> ${data['data-nascimento']}</p>
+            <p><strong>Sexo:</strong> ${data['sexo']}</p>
+            <p><strong>CPF:</strong> ${data['cpf']}</p>
+            <p><strong>Atestado Carcerário:</strong> ${data['matricula-detento']}</p>
+            <p><strong>Estado:</strong> ${data['cidade']}/${data['estado']}</p>
+            <p><strong>Email:</strong> ${data['email']}</p>
+        `;
+    }
+
+    function editProfile(index) {
+        let storedData = JSON.parse(localStorage.getItem('cadastroClientes')) || [];
+        const selectedProfile = storedData[index];
+
+        const profileDiv = document.getElementById('profile');
+        profileDiv.innerHTML = `
+            <label>Nome: <input type="text" id="editNome" value="${selectedProfile['nome']}"></label><br>
+            <label>Data de Nascimento: <input type="text" id="editDataNascimento" value="${selectedProfile['data-nascimento']}"></label><br>
+            <label>Sexo: <input type="text" id="editSexo" value="${selectedProfile['sexo']}"></label><br>
+            <label>CPF: <input type="text" id="editCPF" value="${selectedProfile['cpf']}"></label><br>
+            <label>Atestado Carcerário: <input type="text" id="editMatriculaDetento" value="${selectedProfile['matricula-detento']}"></label><br>
+            <label>Estado: <input type="text" id="editCidade" value="${selectedProfile['cidade']}"><input type="text" id="editEstado" value="${selectedProfile['estado']}"></label><br>
+            <label>Email: <input type="text" id="editEmail" value="${selectedProfile['email']}"></label><br>
+            <button id="saveButton">Salvar</button>
+        `;
+
+        document.getElementById('saveButton').addEventListener('click', () => {
+            selectedProfile['nome'] = document.getElementById('editNome').value;
+            selectedProfile['data-nascimento'] = document.getElementById('editDataNascimento').value;
+            selectedProfile['sexo'] = document.getElementById('editSexo').value;
+            selectedProfile['cpf'] = document.getElementById('editCPF').value;
+            selectedProfile['matricula-detento'] = document.getElementById('editMatriculaDetento').value;
+            selectedProfile['cidade'] = document.getElementById('editCidade').value;
+            selectedProfile['estado'] = document.getElementById('editEstado').value;
+            selectedProfile['email'] = document.getElementById('editEmail').value;
+
+            storedData[index] = selectedProfile;
+            localStorage.setItem('cadastroClientes', JSON.stringify(storedData));
+
+            displaySelectedProfile();
         });
     }
 
-    const profileDisplay = document.getElementById('profileDisplay');
-    if (profileDisplay) {
-        const storedProfile = JSON.parse(localStorage.getItem('profile')) || [];
-        if (storedProfile) {
-            const profile = JSON.parse(storedProfile);
-            document.getElementById('displayNome').textContent = profile.nome;
-            document.getElementById('displayCpf').textContent = profile.cpf;
-            document.getElementById('displayRg').textContent = profile.rg;
-            document.getElementById('displayDataNascimento').textContent = profile.dataNascimento;
-            document.getElementById('displayEstadoCivil').textContent = profile.estadoCivil;
-            document.getElementById('displayTelefone').textContent = profile.telefone;
-            document.getElementById('displaySexo').textContent = profile.sexo;
-            document.getElementById('displayRua').textContent = profile.rua;
-            document.getElementById('displayNumero').textContent = profile.numero;
-            document.getElementById('displayBairro').textContent = profile.bairro;
-            document.getElementById('displayEstado').textContent = profile.estado;
-            document.getElementById('displayCidade').textContent = profile.cidade;
-            document.getElementById('displayCep').textContent = profile.cep;
-            document.getElementById('displayMatriculaDetento').textContent = profile.matriculaDetento;
-            document.getElementById('displayEmail').textContent = profile.email;
-        }
-    }
+    loadProfileSelector();
+    displaySelectedProfile(); // Carrega o primeiro perfil por padrão
 });

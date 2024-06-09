@@ -132,7 +132,7 @@ function deleteProfile(index) {
 
 function viewProfile(index) {
     localStorage.setItem('viewProfileIndex', index);
-    window.location.href = 'visualizacao.html';
+    window.location.href = '/codigo/pages/perfil/visualizar-perfil-cliente.html';
 }
 
 // Exibir perfis ao carregar a página
