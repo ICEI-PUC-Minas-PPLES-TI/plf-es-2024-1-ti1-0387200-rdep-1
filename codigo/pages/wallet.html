@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Carteira Digital</title>
+  <link rel="stylesheet" type="text/css" href="wallet.css">
+</head>
+
+<body>
+  <div class="carteira">
+    <h2>Sua Carteira Digital</h2>
+    <p class="saldo">Saldo: R$<span id="saldo">0</span></p>
+    <input type="number" id="quantiaSaque" min="1" placeholder="Digite a quantia do saque">
+    <button onclick="sacarFundos()">Sacar</button>
+  </div>
+
+  <div class="informacoesBancarias" id="informacoesBancarias" style="display: none;">
+    <h2>Suas Informações Bancárias</h2>
+    <form id="formularioBanco">
+      <label for="nome">Nome:</label><br>
+      <input type="text" id="nome" name="nome"><br>
+      <label for="cpf">CPF:</label><br>
+      <input type="number" id="cpf" name="cpf"><br>
+      <label for="banco">Banco:</label><br>
+      <input type="text" id="banco" name="banco"><br>
+      <label for="conta">Número da Conta:</label><br>
+      <input type="number" id="conta" name="conta"><br>
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+
+  <script src="wallet.js"></script>
+</body>
+
+</html>
