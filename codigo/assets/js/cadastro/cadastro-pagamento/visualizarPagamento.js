@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
       storedDataList.innerHTML = '';
   
       let storedData = JSON.parse(localStorage.getItem('formSubmissions')) || [];
-  
+          
       storedData.forEach((data, index) => {
         const div1 = document.createElement('div');
         div1.className = 'row';
