@@ -1,209 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Oficial</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f8f9fa;
-        }
-        .table-container {
-            width: 100%;
-            max-width: 1000px;
-            padding: 15px;
-            margin: auto;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .hidden {
-            display: none;
-        }
-        .offcanvas {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            width: 300px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-            transform: translateX(100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        .offcanvas.show {
-            transform: translateX(0);
-        }
-    </style>
-</head>
-<body>
-
-<div class="table-container">
-    <h2 class="text-center">Perfis Cadastrados</h2>
-    <div class="form-group">
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="/codigo/assets/css/dashboards/dashboard_oficial.css">
+  </head>
+  <body>
+    <div class="table-container">
+      <h2 class="text-center">Perfis Cadastrados</h2>
+      <div class="form-group">
         <label for="searchInput">Buscar por Matrícula de Detento ou CNPJ</label>
-        <input type="text" class="form-control" id="searchInput" placeholder="Digite a Matrícula de Detento ou CNPJ">
-        <button class="btn btn-primary mt-2" onclick="searchProfiles()">Buscar</button>
-        <button class="btn btn-secondary mt-2" onclick="loadUsers()">Buscar Todos</button>
-    </div>
-    <table class="table table-bordered">
+        <input
+          type="text"
+          class="form-control"
+          id="searchInput"
+          placeholder="Digite a Matrícula de Detento ou CNPJ"
+        />
+        <button class="btn btn-primary mt-2" onclick="searchProfiles()">
+          Buscar
+        </button>
+        <button class="btn btn-secondary mt-2" onclick="loadUsers()">
+          Buscar Todos
+        </button>
+      </div>
+      <table class="table table-bordered">
         <thead>
-            <tr>
-                <th>Tipo</th>
-                <th>Usuário</th>
-                <th>Email</th>
-                <th>Detalhes</th>
-            </tr>
+          <tr>
+            <th>Tipo</th>
+            <th>Usuário</th>
+            <th>Email</th>
+            <th>Detalhes</th>
+          </tr>
         </thead>
         <tbody id="userTableBody">
-            <!-- Perfis cadastrados serão inseridos aqui -->
+          <!-- Perfis cadastrados serão inseridos aqui -->
         </tbody>
-    </table>
-</div>
+      </table>
+    </div>
 
-<div class="offcanvas" id="editOffcanvas">
-    <h2 class="text-center">Editar Dados</h2>
-    <form id="editForm">
+    <div class="offcanvas" id="editOffcanvas">
+      <h2 class="text-center">Editar Dados</h2>
+      <form id="editForm">
         <div class="form-group">
-            <label for="editUsername">Usuário</label>
-            <input type="text" class="form-control" id="editUsername" disabled>
+          <label for="editUsername">Usuário</label>
+          <input type="text" class="form-control" id="editUsername" disabled />
         </div>
         <div class="form-group">
-            <label for="editEmail">Email</label>
-            <input type="email" class="form-control" id="editEmail" disabled>
+          <label for="editEmail">Email</label>
+          <input type="email" class="form-control" id="editEmail" disabled />
         </div>
         <div class="form-group">
-            <label for="editPassword">Senha</label>
-            <input type="password" class="form-control" id="editPassword">
-            <input type="checkbox" id="showPassword"> Mostrar Senha
+          <label for="editPassword">Senha</label>
+          <input type="password" class="form-control" id="editPassword" />
+          <input type="checkbox" id="showPassword" /> Mostrar Senha
         </div>
         <div class="form-group">
-            <label for="editTelefone">Telefone</label>
-            <input type="tel" class="form-control" id="editTelefone">
+          <label for="editTelefone">Telefone</label>
+          <input type="tel" class="form-control" id="editTelefone" />
         </div>
         <div class="form-group">
-            <label for="editEndereco">Endereço</label>
-            <input type="text" class="form-control" id="editEndereco">
+          <label for="editEndereco">Endereço</label>
+          <input type="text" class="form-control" id="editEndereco" />
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Salvar Alterações</button>
-    </form>
-</div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Salvar Alterações
+        </button>
+      </form>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    let editingUserKey = null;
-
-    function formatDetails(user) {
-        return `
-            <div>Nome: ${user.nome}</div>
-            <div>RG: ${user.rg}</div>
-            <div>Data de Nascimento: ${user.dataNascimento}</div>
-            <div>Estado Civil: ${user.estadoCivil}</div>
-            <div>Telefone: ${user.telefone}</div>
-            <div>Sexo: ${user.sexo}</div>
-            <div>Endereço: ${user.endereco}</div>
-            ${user.userType === 'cliente' ? `<div>Matrícula de Detento: ${user.matriculaDetento}</div>` : ''}
-            ${user.userType === 'empregador' ? `<div>CNPJ: ${user.cnpj}</div>` : ''}
-            ${user.userType === 'empregador' ? `<div>CNAE: ${user.cnae}</div>` : ''}
-            ${user.userType === 'oficial' ? `<div>Carteira Funcional: ${user.carteiraFuncional}</div>` : ''}
-            <button class="btn btn-sm btn-warning mt-2" onclick="editUser('${user.userType}_${user.username}')">Editar</button>
-            <button class="btn btn-sm btn-danger mt-2" onclick="deleteUser('${user.userType}_${user.username}')">Excluir</button>
-        `;
-    }
-
-    function updateTable(users) {
-        var tableBody = document.getElementById('userTableBody');
-        tableBody.innerHTML = '';
-
-        Object.keys(users).slice(0, 20).forEach(key => {
-            var user = users[key];
-            var row = tableBody.insertRow();
-            row.insertCell(0).innerText = user.userType;
-            row.insertCell(1).innerText = user.username;
-            row.insertCell(2).innerText = user.email || 'N/A';
-            row.insertCell(3).innerHTML = formatDetails(user);
-        });
-    }
-
-    function loadUsers() {
-        var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
-        updateTable(storedUsers);
-    }
-
-    function deleteUser(userKey) {
-        var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
-        delete storedUsers[userKey];
-        localStorage.setItem('users', JSON.stringify(storedUsers));
-        alert('Usuário excluído com sucesso!');
-        loadUsers();
-    }
-
-    function editUser(userKey) {
-        var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
-        var user = storedUsers[userKey];
-        if (user) {
-            editingUserKey = userKey;
-            document.getElementById('editUsername').value = user.username;
-            document.getElementById('editEmail').value = user.email;
-            document.getElementById('editPassword').value = user.password;
-            document.getElementById('editTelefone').value = user.telefone;
-            document.getElementById('editEndereco').value = user.endereco;
-            document.getElementById('editOffcanvas').classList.add('show');
-        }
-    }
-
-    document.getElementById('editForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
-        if (editingUserKey && storedUsers[editingUserKey]) {
-            var user = storedUsers[editingUserKey];
-            user.password = document.getElementById('editPassword').value;
-            user.telefone = document.getElementById('editTelefone').value;
-            user.endereco = document.getElementById('editEndereco').value;
-
-            storedUsers[editingUserKey] = user;
-            localStorage.setItem('users', JSON.stringify(storedUsers));
-            alert('Dados atualizados com sucesso!');
-            document.getElementById('editOffcanvas').classList.remove('show');
-            loadUsers();
-        }
-    });
-
-    document.getElementById('showPassword').addEventListener('change', function() {
-        var passwordField = document.getElementById('editPassword');
-        if (this.checked) {
-            passwordField.type = 'text';
-        } else {
-            passwordField.type = 'password';
-        }
-    });
-
-    function searchProfiles() {
-        var searchValue = document.getElementById('searchInput').value;
-        var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
-        var filteredUsers = Object.keys(storedUsers).reduce((filtered, key) => {
-            var user = storedUsers[key];
-            if ((user.userType === 'cliente' && user.matriculaDetento === searchValue) || 
-                (user.userType === 'empregador' && user.cnpj === searchValue)) {
-                filtered[key] = user;
-            }
-            return filtered;
-        }, {});
-        updateTable(filteredUsers);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        loadUsers();
-    });
-</script>
-
-</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/codigo/assets/js/dashboards/dashboardOficial.js"></script>
+  </body>
 </html>
