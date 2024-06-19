@@ -1,8 +1,10 @@
 let saldo = 100;
 let bancoRegistrado = false; // Inicialmente, nenhum banco está registrado
 
-function adicionarFundos(quantia) {
+function adicionarFundos() {
+  let quantia = document.getElementById("valorPago").value
   saldo += quantia;
+  console.log(saldo);
   document.getElementById("saldo").innerText = saldo;
 }
 
