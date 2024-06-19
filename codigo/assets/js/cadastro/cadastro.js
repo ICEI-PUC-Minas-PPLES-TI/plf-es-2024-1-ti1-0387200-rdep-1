@@ -20,6 +20,8 @@ document.getElementById('registerForm').addEventListener('submit', function(even
   var username = document.getElementById('registerUsername').value;
   var password = document.getElementById('registerPassword').value;
 
+  // var endereco = buscarEndereco(getElementById('cep')).value;
+
   if (userType === "" || username === "" || password === "") {
       alert("Por favor, preencha todos os campos.");
       return;
@@ -39,7 +41,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
       userData.estadoCivil = document.getElementById('clienteEstadoCivil').value;
       userData.telefone = document.getElementById('clienteTelefone').value;
       userData.sexo = document.getElementById('clienteSexo').value;
-      userData.endereco = document.getElementById('clienteEndereco').value;
+      // userData.endereco = document.getElementById('clienteEndereco').value;
       userData.matriculaDetento = document.getElementById('clienteMatriculaDetento').value;
       userData.email = document.getElementById('clienteEmail').value;
   } else if (userType === 'empregador') {
@@ -56,6 +58,37 @@ document.getElementById('registerForm').addEventListener('submit', function(even
       userData.sexo = document.getElementById('oficialSexo').value;
       userData.endereco = document.getElementById('oficialEndereco').value;
   }
+
+//   async function buscarEndereco(endereco) {
+//     const cep = document.getElementById('cep').value.replace('-', '');
+
+//     if (!cep || !/^\d{8}$/.test(cep)) {
+//         alert('Por favor, insira um CEP válido.');
+//         return;
+//     }
+
+//     try {
+//         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+
+//         if (!response.ok) {
+//             throw new Error('Erro ao buscar o endereço.');
+//         }
+
+//         const data = await response.json();
+
+//         if (data.erro) {
+//             throw new Error('CEP não encontrado.');
+//         }
+
+//         document.getElementById('clienteRua').value = data.logradouro;
+//         document.getElementById('clienteBairro').value = data.bairro;
+//         document.getElementById('clienteCidade').value = data.localidade;
+//         document.getElementById('clienteEstado').value = data.uf;
+//         document.getElementById('clientePais').value = 'Brasil';
+//     } catch (error) {
+//         alert(error.message);
+//       }
+// }
 
   // Armazenar dados de cadastro no localStorage
   var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
