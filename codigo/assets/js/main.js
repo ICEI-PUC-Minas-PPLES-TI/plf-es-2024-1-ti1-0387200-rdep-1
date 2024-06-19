@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const header = document.querySelector('.header');
 const footer = document.querySelector('.footer');
+const headerLogin = document.querySelector('.headerLogin');
 
 header.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
 <a class="navbar-brand" href="#">RDEP</a>
@@ -43,6 +44,21 @@ footer.innerHTML = ` <div class="container">
 </footer>
 </div>`
  ;
+ 
+headerLogin.innerHTML = `  
+<header>
+    <div class="profile-info">
+      <div class="user-details">
+        <h1>User's Name</h1>
+        <p>Email: user@example.com</p>
+      </div>
+      <div class="wallet">
+        <img src="wallet-icon.png" alt="Wallet Icon">
+        <p class="balance">$100</p>
+      </div>
+      <img src="avatar.jpg" alt="User Avatar" class="avatar">
+    </div>
+  </header>`
 });
 
 
