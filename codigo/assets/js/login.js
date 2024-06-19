@@ -22,7 +22,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         } else if (userType === 'empregador') {
             window.location.href = 'empregador_dashboard.html';
         } else if (userType === 'oficial') {
-            window.location.href = '../codigo/pages/dashboards/dashboard_oficial.html';
+            window.location.href = '/codigo/pages/dashboards/dashboard_oficial.html';
         }
     } else {
         alert('Credenciais inválidas. Por favor, verifique seu usuário e senha.');
