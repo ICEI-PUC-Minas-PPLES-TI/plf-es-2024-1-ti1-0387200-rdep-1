@@ -5,23 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f8f9fa;
-        }
-        .form-container {
-            width: 100%;
-            max-width: 500px;
-            padding: 15px;
-            margin: auto;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    
+    <link rel="stylesheet" href="/codigo/assets/css/login/login.css">
 </head>
 <body>
 
@@ -54,37 +39,6 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        var userType = document.getElementById('loginUserType').value;
-        var username = document.getElementById('loginUsername').value;
-        var password = document.getElementById('loginPassword').value;
-
-        if (userType === "" || username === "" || password === "") {
-            alert("Por favor, preencha todos os campos.");
-            return;
-        }
-
-        // Verificação de credenciais no localStorage
-        var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
-        var userKey = userType + '_' + username;
-        if (storedUsers[userKey] && storedUsers[userKey].password === password) {
-            alert('Login bem-sucedido!');
-            // Redirecionar para páginas específicas com base no tipo de usuário
-            if (userType === 'cliente') {
-                window.location.href = 'cliente_dashboard.html';
-            } else if (userType === 'empregador') {
-                window.location.href = 'empregador_dashboard.html';
-            } else if (userType === 'oficial') {
-                window.location.href = 'oficial_dashboard.html';
-            }
-        } else {
-            alert('Credenciais inválidas. Por favor, verifique seu usuário e senha.');
-        }
-    });
-</script>
-
+<script src="/codigo/assets/js/login.js"></script>
 </body>
 </html>
