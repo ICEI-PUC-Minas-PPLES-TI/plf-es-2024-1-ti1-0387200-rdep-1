@@ -43,6 +43,7 @@
     </style>
 </head>
 <body>
+    <div id="headerPerfil"></div>
 
 <div class="table-container">
     <h2 class="text-center">Perfis Cadastrados</h2>
@@ -203,6 +204,13 @@
     document.addEventListener('DOMContentLoaded', function() {
         loadUsers();
     });
+</script>
+<script src="/codigo/assets/js/main.js"></script>
+<script>
+    $(function() {
+            $("#headerPerfil").load("/codigo/pages/dinamic/headerPerfil.html");
+            // $("#footer").load("footer.html");
+        });
 </script>
 
 </body>
