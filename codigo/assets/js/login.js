@@ -1,4 +1,3 @@
-
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -6,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var username = document.getElementById('loginUsername').value;
     var password = document.getElementById('loginPassword').value;
 
-    if (userType === "",  username === "",  password === "") {
+    if (userType === "" || username === "" || password === "") {
         alert("Por favor, preencha todos os campos.");
         return;
     }
@@ -18,9 +17,9 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('Login bem-sucedido!');
         // Redirecionar para páginas específicas com base no tipo de usuário
         if (userType === 'cliente') {
-            window.location.href = 'cliente_dashboard.html';
+            window.location.href = '/codigo/pages/dashboards/cliente_dashboard.html';
         } else if (userType === 'empregador') {
-            window.location.href = 'empregador_dashboard.html';
+            window.location.href = '/codigo/pages/dashboards/empregador_dashboard.html';
         } else if (userType === 'oficial') {
             window.location.href = '/codigo/pages/dashboards/dashboard_oficial.html';
         }
