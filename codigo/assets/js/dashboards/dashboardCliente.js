@@ -26,3 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loginModal.style.display = 'none';
     }
 });
+
+document.getElementById('avatarIcon').addEventListener('click', function() {
+  window.location.href = 'perfil.html';
+});
