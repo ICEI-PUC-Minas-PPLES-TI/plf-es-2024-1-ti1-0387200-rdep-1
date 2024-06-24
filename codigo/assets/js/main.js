@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const header = document.querySelector('.header');
 const footer = document.querySelector('.footer');
+const headerPerfil = document.querySelector('#headerLogin');
 
-header.innerHTML = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
+header.innerHTML = `
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 <a class="navbar-brand" href="#">RDEP</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -43,6 +45,21 @@ footer.innerHTML = ` <div class="container">
 </footer>
 </div>`
  ;
+
+headerPerfil.innerHTML = `  
+<header>
+    <div class="profile-info">
+      <div class="user-details">
+        <h1>User's Name</h1>
+        <p>Email: user@example.com</p>
+      </div>
+      <div class="wallet">
+        <img src="wallet-icon.png" alt="Wallet Icon">
+        <p class="balance">$100</p>
+      </div>
+      <img src="avatar.jpg" alt="User Avatar" class="avatar">
+    </div>
+  </header>`
 });
 
 

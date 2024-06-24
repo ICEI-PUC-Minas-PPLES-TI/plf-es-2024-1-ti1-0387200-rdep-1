@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Oficial</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="/codigo/assets/css/dashboards/dashboard_oficial.css">
+  </head>
+  <body>
+    <div class="table-container">
+      <h2 class="text-center">Perfis Cadastrados</h2>
+      <div class="form-group">
+        <label for="searchInput">Buscar por Matrícula de Detento ou CNPJ</label>
+        <input
+          type="text"
+          class="form-control"
+          id="searchInput"
+          placeholder="Digite a Matrícula de Detento ou CNPJ"
+        />
+        <button class="btn btn-primary mt-2" onclick="searchProfiles()">
+          Buscar
+        </button>
+        <button class="btn btn-secondary mt-2" onclick="loadUsers()">
+          Buscar Todos
+        </button>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Usuário</th>
+            <th>Email</th>
+            <th>Detalhes</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <!-- Perfis cadastrados serão inseridos aqui -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="offcanvas" id="editOffcanvas">
+      <h2 class="text-center">Editar Dados</h2>
+      <form id="editForm">
+        <div class="form-group">
+          <label for="editUsername">Usuário</label>
+          <input type="text" class="form-control" id="editUsername" disabled />
+        </div>
+        <div class="form-group">
+          <label for="editEmail">Email</label>
+          <input type="email" class="form-control" id="editEmail" disabled />
+        </div>
+        <div class="form-group">
+          <label for="editPassword">Senha</label>
+          <input type="password" class="form-control" id="editPassword" />
+          <input type="checkbox" id="showPassword" /> Mostrar Senha
+        </div>
+        <div class="form-group">
+          <label for="editTelefone">Telefone</label>
+          <input type="tel" class="form-control" id="editTelefone" />
+        </div>
+        <div class="form-group">
+          <label for="editEndereco">Endereço</label>
+          <input type="text" class="form-control" id="editEndereco" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Salvar Alterações
+        </button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/codigo/assets/js/dashboards/dashboardOficial.js"></script>
+  </body>
+</html>

@@ -1,32 +1,162 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/codigo/assets/css/cadastro/cadastro.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Cadastro</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 15px;
+            margin: auto;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <main>
-        <section class="container">
-            <h1>Cadastro</h1>
-            <h2>Insira qual tipo de cadastro deseja efetuar: </h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="cadastro-cliente.html"><button class="btn btn-primary">Ex-presidiário</button></a>
-                </div>
-                <div class="col-md-4">
-                    <a href="cadastro-empregador.html"><button class="btn btn-primary">Empregador</button></a>
-                </div>
-                <div class="col-md-4">
-                    <a href="cadastro-oficial.html"><button class="btn btn-primary">Oficial de justiça</button></a>
-                </div>
+
+<div class="form-container">
+    <form id="registerForm">
+        <h2 class="text-center">Cadastro</h2>
+        <div class="form-group">
+            <label for="registerUserType">Tipo de Usuário</label>
+            <select class="form-control" id="registerUserType" required>
+                <option value="">Selecione o Tipo de Usuário</option>
+                <option value="cliente">Cliente</option>
+                <option value="empregador">Empregador</option>
+                <option value="oficial">Oficial de Justiça</option>
+            </select>
+        </div>
+
+        <div id="clienteFields" class="hidden">
+            <div class="form-group">
+                <label for="clienteNome">Nome</label>
+                <input type="text" class="form-control" id="clienteNome">
             </div>
-        </section> 
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+            <div class="form-group">
+                <label for="clienteRg">RG</label>
+                <input type="text" class="form-control" id="clienteRg">
+            </div>
+            <div class="form-group">
+                <label for="clienteDataNascimento">Data de Nascimento</label>
+                <input type="date" class="form-control" id="clienteDataNascimento">
+            </div>
+            <div class="form-group">
+                <label for="clienteEstadoCivil">Estado Civil</label>
+                <input type="text" class="form-control" id="clienteEstadoCivil">
+            </div>
+            <div class="form-group">
+                <label for="clienteTelefone">Telefone</label>
+                <input type="tel" class="form-control" id="clienteTelefone">
+            </div>
+            <div class="form-group">
+                <label for="clienteSexo">Sexo</label>
+                <select class="form-control" id="clienteSexo">
+                    <option value="">Selecione o Sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="clienteEndereco">Endereço</label>
+                <input type="text" class="form-control" id="clienteEndereco">
+            </div>
+            <div class="form-group">
+                <label for="clienteMatriculaDetento">Matrícula de Detento</label>
+                <input type="text" class="form-control" id="clienteMatriculaDetento">
+            </div>
+            <div class="form-group">
+                <label for="clienteEmail">Email</label>
+                <input type="email" class="form-control" id="clienteEmail">
+            </div>
+        </div>
+
+        <div id="empregadorFields" class="hidden">
+            <div class="form-group">
+                <label for="empregadorRazaoSocial">Razão Social</label>
+                <input type="text" class="form-control" id="empregadorRazaoSocial">
+            </div>
+            <div class="form-group">
+                <label for="empregadorCnpj">CNPJ</label>
+                <input type="text" class="form-control" id="empregadorCnpj">
+            </div>
+            <div class="form-group">
+                <label for="empregadorCnae">CNAE</label>
+                <input type="text" class="form-control" id="empregadorCnae">
+            </div>
+            <div class="form-group">
+                <label for="empregadorEndereco">Endereço</label>
+                <input type="text" class="form-control" id="empregadorEndereco">
+            </div>
+            <div class="form-group">
+                <label for="empregadorEmail">Email</label>
+                <input type="email" class="form-control" id="empregadorEmail">
+            </div>
+        </div>
+
+        <div id="oficialFields" class="hidden">
+            <div class="form-group">
+                <label for="oficialNome">Nome</label>
+                <input type="text" class="form-control" id="oficialNome">
+            </div>
+            <div class="form-group">
+                <label for="oficialCarteiraFuncional">Carteira Funcional</label>
+                <input type="text" class="form-control" id="oficialCarteiraFuncional">
+            </div>
+            <div class="form-group">
+                <label for="oficialDataNascimento">Data de Nascimento</label>
+                <input type="date" class="form-control" id="oficialDataNascimento">
+            </div>
+            <div class="form-group">
+                <label for="oficialTelefone">Telefone</label>
+                <input type="tel" class="form-control" id="oficialTelefone">
+            </div>
+            <div class="form-group">
+                <label for="oficialSexo">Sexo</label>
+                <select class="form-control" id="oficialSexo">
+                    <option value="">Selecione o Sexo</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="oficialEndereco">Endereço</label>
+                <input type="text" class="form-control" id="oficialEndereco">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="registerUsername">Usuário</label>
+            <input type="text" class="form-control" id="registerUsername" placeholder="Nome de Usuário" required>
+        </div>
+        <div class="form-group">
+            <label for="registerPassword">Senha</label>
+            <input type="password" class="form-control" id="registerPassword" placeholder="Senha" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+        </div>
+        <p class="text-center"><a href="/codigo/pages/login/login.html">Já tem uma conta? Faça login</a></p>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/codigo/assets/js/cadastro/cadastro.js"></script>
+
+
 </body>
 </html>
