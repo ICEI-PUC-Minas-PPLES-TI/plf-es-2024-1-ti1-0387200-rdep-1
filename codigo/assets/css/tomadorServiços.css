@@ -193,13 +193,27 @@ button:hover {
 }
 
 /* Estilos para o modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
+  margin: 10% auto;
+  padding: 15px;
   border-radius: 8px;
-  width: 80%;
+  width: 70%;
+  max-width: 600px; /* Define uma largura máxima para o modal */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Impede que conteúdo muito grande force o modal a crescer */
 }
 
 .modal-content h2 {
@@ -219,10 +233,11 @@ button:hover {
 
 .modal-content input[type="text"],
 .modal-content textarea {
-  width: 100%;
+  width: calc(100% - 20px); /* Leva em consideração o padding de 10px de cada lado */
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box; /* Garante que o padding não aumente o tamanho total do input */
 }
 
 .modal-content textarea {
