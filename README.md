@@ -22,8 +22,6 @@ Em suma, o RdEP é mais do que apenas um software - é uma ferramenta poderosa p
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
-
 * Abra a pasta do projeto;
 * Abra o Visual Studio Code na pasta raiz do projeto;
 * Acesse o index.html;
