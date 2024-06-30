@@ -41,6 +41,14 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         userData.sexo = document.getElementById('clienteSexo').value;
         userData.matriculaDetento = document.getElementById('clienteMatriculaDetento').value;
         userData.email = document.getElementById('clienteEmail').value;
+        userData.endereco = {
+            rua: document.getElementById('rua').value,
+            numero: document.getElementById('numero').value,
+            complemento: document.getElementById('complemento').value,
+            bairro: document.getElementById('bairro').value,
+            cidade: document.getElementById('cidade').value,
+            estado: document.getElementById('estado').value
+        };
     } else if (userType === 'empregador') {
         userData.razaoSocial = document.getElementById('empregadorRazaoSocial').value;
         userData.cnpj = document.getElementById('empregadorCnpj').value;
@@ -62,6 +70,14 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         userData.telefone = document.getElementById('oficialTelefone').value;
         userData.sexo = document.getElementById('oficialSexo').value;
         userData.endereco = document.getElementById('oficialEndereco').value;
+        userData.endereco = {
+            rua: document.getElementById('rua').value,
+            numero: document.getElementById('numero').value,
+            complemento: document.getElementById('complemento').value,
+            bairro: document.getElementById('bairro').value,
+            cidade: document.getElementById('cidade').value,
+            estado: document.getElementById('estado').value
+        };
     }
 
     // Armazenar dados de cadastro no localStorage

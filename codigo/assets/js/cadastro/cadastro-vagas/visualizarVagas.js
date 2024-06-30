@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function formatFormData(data) {
       return `
         <h3>Vaga ${data['titulo-vaga']}</h3>
-        <p><strong>ID da Vaga:</strong> ${data.id}</p>
         <p><strong>Sobre a Vaga:</strong> ${data['sobre-a-vaga']}</p>
         <p><strong>Salario :</strong> ${data['salario']}</p>
         <p><strong>Escolaridade :</strong> ${data['escolaridade']}</p>
