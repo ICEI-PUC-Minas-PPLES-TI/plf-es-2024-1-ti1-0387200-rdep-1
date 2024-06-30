@@ -17,8 +17,8 @@ Em suma, o RdEP é mais do que apenas um software - é uma ferramenta poderosa p
 
 ## Professores responsáveis
 
-* Diego Algusto
-* Luiz Henrique Costa
+* Diego Augusto de Faria Barros
+* Luiz Henrique da Costa Silva
 
 ## Instruções de utilização
 
