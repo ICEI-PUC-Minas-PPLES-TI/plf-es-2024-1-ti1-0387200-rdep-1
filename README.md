@@ -41,3 +41,9 @@ Após realizado o Login:
 * Conta com um Dashboard onde pode navegar pelas vagas disponibilizadas por empregadores, e acessar uma vaga desejada.
 * Pode contar também com cursos disponibilizados pela plataforma, acessar este curso e se inscrever, se for do interesse.
 * Conta também com uma lista de empresas, onde pode acessar e visualizar se aquela empresa em questão possui vagas que lhe interessam.
+
+### Empregador
+
+* Conta com um Dashboard onde pode visualizar uma vaga postada previamente e acessar esta vaga para edição, visualização de candidatos, e exclusão da vaga.
+* Pode contar com uma tela para cadastro de uma nova vaga.
+* Conta também com uma lista de ex-presidiários para visualização somente do perfil destes, e, se houver interesse, pode entrar em contato com as informações de contato disponibilizadas pelo próprio ex-presidiário.
