@@ -55,12 +55,12 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         userData.cnae = document.getElementById('empregadorCnae').value;
         userData.cep = document.getElementById('empregadorCep').value;
         userData.endereco = {
-            rua: document.getElementById('rua').value,
-            numero: document.getElementById('numero').value,
-            complemento: document.getElementById('complemento').value,
-            bairro: document.getElementById('bairro').value,
-            cidade: document.getElementById('cidade').value,
-            estado: document.getElementById('estado').value
+            rua: document.getElementById('ruaTS').value,
+            numero: document.getElementById('numeroTS').value,
+            complemento: document.getElementById('complementoTS').value,
+            bairro: document.getElementById('bairroTS').value,
+            cidade: document.getElementById('cidadeTS').value,
+            estado: document.getElementById('estadoTS').value
         };
         userData.email = document.getElementById('empregadorEmail').value;
     } else if (userType === 'oficial') {

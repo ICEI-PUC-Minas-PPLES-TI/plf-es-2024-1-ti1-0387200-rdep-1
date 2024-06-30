@@ -157,32 +157,32 @@
                 </div>
                 <div class="form-group">
                     <label for="empregadorCep">CEP</label>
-                    <input type="text" class="form-control" id="empregadorCep" name="empregadorCep" required pattern="\d{5}-\d{3}" title="Formato: 00000-000">
+                    <input type="text" class="form-control" id="empregadorCep" name="empregadorCep" required pattern="\d{8}" title="Formato: 00000000">
                     <button type="button" class="btn btn-primary mt-2" onclick="buscarEndereco('empregadorCep')">Buscar Endereço</button>
                 </div>
                 <div class="form-group">
                     <label for="rua">Rua</label>
-                    <input type="text" class="form-control" id="rua" name="rua" required>
+                    <input type="text" class="form-control" id="ruaTS" name="ruaTS" required>
                 </div>
                 <div class="form-group">
                     <label for="numero">Número</label>
-                    <input type="text" class="form-control" id="numero" name="numero" required>
+                    <input type="text" class="form-control" id="numeroTS" name="numeroTS" required>
                 </div>
                 <div class="form-group">
                     <label for="complemento">Complemento</label>
-                    <input type="text" class="form-control" id="complemento" name="complemento">
+                    <input type="text" class="form-control" id="complementoTS" name="complementoTS">
                 </div>
                 <div class="form-group">
                     <label for="bairro">Bairro</label>
-                    <input type="text" class="form-control" id="bairro" name="bairro" required>
+                    <input type="text" class="form-control" id="bairroTS" name="bairroTS" required>
                 </div>
                 <div class="form-group">
                     <label for="cidade">Cidade</label>
-                    <input type="text" class="form-control" id="cidade" name="cidade" required>
+                    <input type="text" class="form-control" id="cidadeTS" name="cidadeTS" required>
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select class="form-control" id="estado" name="estado" required>
+                    <select class="form-control" id="estadoTS" name="estadoTS" required>
                         <option value="">Selecione o estado</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
