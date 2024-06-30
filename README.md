@@ -14,7 +14,6 @@ Em suma, o RdEP é mais do que apenas um software - é uma ferramenta poderosa p
 * Raphael Sena
 * Raul Cardoso Siqueira
 * Victor Rocha
-* Vinicius Trevisani 
 
 ## Professores responsáveis
 
@@ -24,3 +23,21 @@ Em suma, o RdEP é mais do que apenas um software - é uma ferramenta poderosa p
 ## Instruções de utilização
 
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+
+* Abra a pasta do projeto;
+* Abra o Visual Studio Code na pasta raiz do projeto;
+* Acesse o index.html;
+* Abra o LiveServer nesta página;
+* Navegue.
+
+## Conteúdo
+
+O sistema RDEP conta com uma página inicial como uma landing page, nessa página pode-se navegar por notícias sobre a área, possui informações de contato com o time e você pode acessar sua conta por um Login, ou cadastrar uma nova conta se você for um ex-presidiário, um empregador interessado nesta mão de obra ou um Oficial de Justiça para acompanhamento de indivíduos.
+
+Após realizado o Login:
+
+### Ex-presidiário
+
+* Conta com um Dashboard onde pode navegar pelas vagas disponibilizadas por empregadores, e acessar uma vaga desejada.
+* Pode contar também com cursos disponibilizados pela plataforma, acessar este curso e se inscrever, se for do interesse.
+* Conta também com uma lista de empresas, onde pode acessar e visualizar se aquela empresa em questão possui vagas que lhe interessam.
