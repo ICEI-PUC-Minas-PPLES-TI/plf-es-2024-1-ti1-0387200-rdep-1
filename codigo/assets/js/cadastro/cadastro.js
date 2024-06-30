@@ -6,10 +6,19 @@ document.getElementById('registerUserType').addEventListener('change', function(
 
     if (userType === 'cliente') {
         document.getElementById('clienteFields').classList.remove('hidden');
+        enableFormFields('clienteFields');
+        disableFormFields('empregadorFields');
+        disableFormFields('oficialFields');
     } else if (userType === 'empregador') {
         document.getElementById('empregadorFields').classList.remove('hidden');
+        enableFormFields('empregadorFields');
+        disableFormFields('clienteFields');
+        disableFormFields('oficialFields');
     } else if (userType === 'oficial') {
         document.getElementById('oficialFields').classList.remove('hidden');
+        enableFormFields('oficialFields');
+        disableFormFields('clienteFields');
+        disableFormFields('empregadorFields');
     }
 });
 
@@ -33,6 +42,9 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
     // Coleta de dados específicos para cada tipo de usuário
     if (userType === 'cliente') {
+        if (!validateClienteForm()) {
+            return;
+        }
         userData.nome = document.getElementById('clienteNome').value;
         userData.rg = document.getElementById('clienteRg').value;
         userData.dataNascimento = document.getElementById('clienteDataNascimento').value;
@@ -50,10 +62,14 @@ document.getElementById('registerForm').addEventListener('submit', function(even
             estado: document.getElementById('estado').value
         };
     } else if (userType === 'empregador') {
+        if (!validateEmpregadorForm()) {
+            return;
+        }
         userData.razaoSocial = document.getElementById('empregadorRazaoSocial').value;
         userData.cnpj = document.getElementById('empregadorCnpj').value;
         userData.cnae = document.getElementById('empregadorCnae').value;
         userData.cep = document.getElementById('empregadorCep').value;
+        userData.email = document.getElementById('empregadorEmail').value;
         userData.endereco = {
             rua: document.getElementById('ruaTS').value,
             numero: document.getElementById('numeroTS').value,
@@ -62,22 +78,16 @@ document.getElementById('registerForm').addEventListener('submit', function(even
             cidade: document.getElementById('cidadeTS').value,
             estado: document.getElementById('estadoTS').value
         };
-        userData.email = document.getElementById('empregadorEmail').value;
     } else if (userType === 'oficial') {
+        if (!validateOficialForm()) {
+            return;
+        }
         userData.nome = document.getElementById('oficialNome').value;
         userData.carteiraFuncional = document.getElementById('oficialCarteiraFuncional').value;
         userData.dataNascimento = document.getElementById('oficialDataNascimento').value;
         userData.telefone = document.getElementById('oficialTelefone').value;
         userData.sexo = document.getElementById('oficialSexo').value;
         userData.endereco = document.getElementById('oficialEndereco').value;
-        userData.endereco = {
-            rua: document.getElementById('rua').value,
-            numero: document.getElementById('numero').value,
-            complemento: document.getElementById('complemento').value,
-            bairro: document.getElementById('bairro').value,
-            cidade: document.getElementById('cidade').value,
-            estado: document.getElementById('estado').value
-        };
     }
 
     // Armazenar dados de cadastro no localStorage
@@ -123,12 +133,97 @@ async function buscarEndereco(cepId) {
             throw new Error('CEP não encontrado.');
         }
 
-        document.getElementById('rua').value = data.logradouro;
-        document.getElementById('bairro').value = data.bairro;
-        document.getElementById('cidade').value = data.localidade;
-        document.getElementById('estado').value = data.uf;
+        // Preencher os campos de endereço de acordo com o tipo de usuário
+        if (cepId === 'clienteCep') {
+            document.getElementById('rua').value = data.logradouro;
+            document.getElementById('bairro').value = data.bairro;
+            document.getElementById('cidade').value = data.localidade;
+            document.getElementById('estado').value = data.uf;
+        } else if (cepId === 'empregadorCep') {
+            document.getElementById('ruaTS').value = data.logradouro;
+            document.getElementById('bairroTS').value = data.bairro;
+            document.getElementById('cidadeTS').value = data.localidade;
+            document.getElementById('estadoTS').value = data.uf;
+        }
     } catch (error) {
         alert(error.message);
     }
 }
 
+function disableFormFields(fieldsId) {
+    var fields = document.getElementById(fieldsId).querySelectorAll('input, select');
+    fields.forEach(function(field) {
+        field.disabled = true;
+    });
+}
+
+function enableFormFields(fieldsId) {
+    var fields = document.getElementById(fieldsId).querySelectorAll('input, select');
+    fields.forEach(function(field) {
+        field.disabled = false;
+    });
+}
+
+function validateClienteForm() {
+    var nome = document.getElementById('clienteNome').value;
+    var rg = document.getElementById('clienteRg').value;
+    var dataNascimento = document.getElementById('clienteDataNascimento').value;
+    var estadoCivil = document.getElementById('clienteEstadoCivil').value;
+    var telefone = document.getElementById('clienteTelefone').value;
+    var sexo = document.getElementById('clienteSexo').value;
+    var matriculaDetento = document.getElementById('clienteMatriculaDetento').value;
+    var email = document.getElementById('clienteEmail').value;
+    var rua = document.getElementById('rua').value;
+    var numero = document.getElementById('numero').value;
+    var complemento = document.getElementById('complemento').value;
+    var bairro = document.getElementById('bairro').value;
+    var cidade = document.getElementById('cidade').value;
+    var estado = document.getElementById('estado').value;
+
+    if (nome === "" || rg === "" || dataNascimento === "" || estadoCivil === "" || telefone === "" || sexo === "" ||
+        matriculaDetento === "" || email === "" || rua === "" || numero === "" || complemento === "" ||
+        bairro === "" || cidade === "" || estado === "") {
+        alert("Por favor, preencha todos os campos.");
+        return false;
+    }
+
+    return true;
+}
+
+function validateEmpregadorForm() {
+    var razaoSocial = document.getElementById('empregadorRazaoSocial').value;
+    var cnpj = document.getElementById('empregadorCnpj').value;
+    var cnae = document.getElementById('empregadorCnae').value;
+    var cep = document.getElementById('empregadorCep').value;
+    var ruaTS = document.getElementById('ruaTS').value;
+    var numeroTS = document.getElementById('numeroTS').value;
+    var complementoTS = document.getElementById('complementoTS').value;
+    var bairroTS = document.getElementById('bairroTS').value;
+    var cidadeTS = document.getElementById('cidadeTS').value;
+    var estadoTS = document.getElementById('estadoTS').value;
+    var email = document.getElementById('empregadorEmail').value;
+
+    if (razaoSocial === "" || cnpj === "" || cnae === "" || cep === "" || ruaTS === "" || numeroTS === "" ||
+        complementoTS === "" || bairroTS === "" || cidadeTS === "" || estadoTS === "" || email === "") {
+        alert("Por favor, preencha todos os campos.");
+        return false;
+    }
+
+    return true;
+}
+
+function validateOficialForm() {
+    var nome = document.getElementById('oficialNome').value;
+    var carteiraFuncional = document.getElementById('oficialCarteiraFuncional').value;
+    var dataNascimento = document.getElementById('oficialDataNascimento').value;
+    var telefone = document.getElementById('oficialTelefone').value;
+    var sexo = document.getElementById('oficialSexo').value;
+    var endereco = document.getElementById('oficialEndereco').value;
+
+    if (nome === "" || carteiraFuncional === "" || dataNascimento === "" || telefone === "" || sexo === "" || endereco === "") {
+        alert("Por favor, preencha todos os campos.");
+        return false;
+    }
+
+    return true;
+}
