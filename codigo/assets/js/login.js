@@ -1,29 +1,41 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var userType = document.getElementById('loginUserType').value;
-    var username = document.getElementById('loginUsername').value;
-    var password = document.getElementById('loginPassword').value;
 
-    if (userType === "" || username === "" || password === "") {
-        alert("Por favor, preencha todos os campos.");
-        return;
-    }
+    function login() {
+        const userType = document.getElementById("loginUserType").value;
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value; 
 
-    // Verificação de credenciais no localStorage
-    var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
-    var userKey = userType + '_' + username;
-    if (storedUsers[userKey] && storedUsers[userKey].password === password) {
-        alert('Login bem-sucedido!');
-        // Redirecionar para páginas específicas com base no tipo de usuário
-        if (userType === 'cliente') {
-            window.location.href = '/codigo/pages/dashboards/cliente_dashboard.html';
-        } else if (userType === 'empregador') {
-            window.location.href = '/codigo/pages/dashboards/empregador_dashboard.html';
-        } else if (userType === 'oficial') {
-            window.location.href = '/codigo/pages/dashboards/dashboard_oficial.html';
+        // Simulando o armazenamento no Local Storage
+        const storedUsers = JSON.parse(localStorage.getItem('users')) || {};
+        const userKey = userType + '_' + username;
+
+        if (storedUsers[userType] && storedUsers[userType][username]) {
+            // Verificar a nome
+            if (storedUsers[userType][username].password === password) {
+                alert('Login bem-sucedido! Redirecionando...');
+                if (userType == 'cliente') {
+                    window.location.href = "/codigo/pages/dashboards/cliente_dashboard.html";
+                    console.log('redirecionado')
+                    }
+                    else if (userType == 'empregador') {
+                        window.location.href = "/codigo/pages/dashboards/empregador_dashboard.html";  
+                        console.log('redirecionado') 
+                }
+                else if (userType == 'oficial') {
+                    window.location.href = "/codigo/pages/dashboards/dashboard_oficial.html"; 
+                    console.log('redirecionado')
+
+                }
+            } else {
+                alert('Senha incorreta. Tente novamente.');
+            }
+        } else {
+            alert('Usuário não encontrado. Por favor, cadastre-se primeiro.');
+            console.log(localStorage.getItem('users'));
         }
-    } else {
-        alert('Credenciais inválidas. Por favor, verifique seu usuário e senha.');
     }
+
+    login();
 });

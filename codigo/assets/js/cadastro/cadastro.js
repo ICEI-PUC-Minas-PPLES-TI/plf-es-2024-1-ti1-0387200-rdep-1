@@ -49,13 +49,6 @@ document.getElementById('registerUserType').addEventListener('change', function(
         userData.cnae = document.getElementById('empregadorCnae').value;
         userData.endereco = document.getElementById('empregadorEndereco').value;
         userData.email = document.getElementById('empregadorEmail').value;
-
-        console.log('empregadorRazaoSocial:', userData.razaoSocial);
-        console.log('empregadorCnpj:', userData.cnpj);
-        console.log('empregadorCnae:', userData.cnae);
-        console.log('empregadorEndereco:', userData.endereco);
-        console.log('empregadorEmail:', userData.email);
-
     } else if (userType === 'oficial') {
       userData.nome = document.getElementById('oficialNome').value;
       userData.carteiraFuncional = document.getElementById('oficialCarteiraFuncional').value;
