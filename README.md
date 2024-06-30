@@ -47,3 +47,13 @@ Após realizado o Login:
 * Conta com um Dashboard onde pode visualizar uma vaga postada previamente e acessar esta vaga para edição, visualização de candidatos, e exclusão da vaga.
 * Pode contar com uma tela para cadastro de uma nova vaga.
 * Conta também com uma lista de ex-presidiários para visualização somente do perfil destes, e, se houver interesse, pode entrar em contato com as informações de contato disponibilizadas pelo próprio ex-presidiário.
+
+### Oficial de Justiça
+
+* Conta com um Dashboard onde pode gerenciar todos os usuários da plataforma.
+* Este gerenciamento pode ser feito da seguinte forma:
+  * Editar um usuário, sendo este ex-presidiário ou empregador.
+    * Edição limitada a somente campos não críticos, com a exclusão de possibilidade de alteração de senha, por exemplo.
+  * Busca por um usuário.
+    * Se ex-presidiário pela matrícula de detenção.
+    * Se um empregador pelo CNPJ.
