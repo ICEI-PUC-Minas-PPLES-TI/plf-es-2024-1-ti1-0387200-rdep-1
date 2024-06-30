@@ -27,14 +27,12 @@ O público alvo de nossa aplicação são os detentos, ex-presidiários, empresa
 
 ## Personas
 
-Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-rdep-1/assets/78915270/b4681f0d-0efb-4d27-971a-ef4a28a53227)
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-rdep-1/assets/78915270/33c7a797-ca22-45f2-8ce7-50f40e0f63fe)
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-rdep-1/assets/78915270/f4de214f-a803-4171-81e0-7d399517e802)
 
-**Links Úteis**:
-
-- [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-- [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-- [Rock Content](https://rockcontent.com/blog/personas/)
-- [Criar personas (Hotmart)](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
+## Matriz de alinhamento CSD e Mapa de Stakeholders
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-rdep-1/assets/78915270/63cd1047-dae5-431c-9f62-8a704ee931ba)
 
 ## Histórias de Usuários
 
@@ -58,44 +56,151 @@ Os requisitos de um projeto são classificados em dois grupos:
 - [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
   correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
 
-Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+### Requisitos Funcionais
+#### Cadastro de Usuários
+- Permitir o cadastro de ex-presidiários, empregadores e oficiais de justiça.
+- Coletar informações básicas, histórico profissional e interesses dos ex-presidiários.
+- Permitir que empregadores registrem informações sobre suas empresas e vagas disponíveis.
+  
+#### Acessos
+- Sistema de login seguro para todos os usuários.
+- Diferentes níveis de acesso: ex-presidiários, empregadores, oficiais de justiça.
+
+#### Busca e Candidatura de Vagas
+- Ex-presidiários podem buscar e se candidatar a vagas de emprego.
+- Filtrar vagas por localização, setor, habilidades requeridas, etc.
+
+#### Inscrição em Cursos Profissionalizantes
+- Permitir que ex-presidiários busquem e se inscrevam em cursos profissionalizantes.
+- Notificações de novos cursos e lembretes de inscrição.
+
+#### Registro de Vagas
+- Empregadores podem cadastrar vagas específicas para ex-presidiários.
+- Possibilidade de descrever requisitos, benefícios e detalhes da vaga.
+
+#### Mediação e Monitoramento
+- Oficiais de justiça podem monitorar atividades dos ex-presidiários.
+- Possibilidade de mediar conflitos entre empregadores e ex-presidiários.
+- 
+#### Sistema de Mensagens
+- Comunicação entre ex-presidiários, empregadores e oficiais de justiça.
+- Notificações de novos contatos, mensagens, e atualizações de status.
+
+### Requisitos Não Funcionais
+#### Usabilidade
+- Interface intuitiva e fácil de usar para todos os tipos de usuários.
+- Disponibilidade de tutoriais ou guias de uso.
+
+#### Desempenho
+- Resposta rápida do sistema, mesmo com múltiplos usuários simultâneos.
+- Tempo de carregamento mínimo para páginas e relatórios.
+
+#### Escaabilidade
+- Capacidade de suportar um número crescente de usuários e dados.
+  
+#### Disponibilidade
+- Sistema disponível 24/7.
+  
+#### Acessibilidade
+- Design responsivo para acesso em diferentes dispositivos.
+
+#### Manutenibilidade
+- Código bem documentado para facilitar manutenção.
+- Capacidade de atualizar ou adicionar funcionalidades com mínima interrupção do serviço.
+
+#### Compatibilidade
+- Compatível com diferentes navegadores e dispositivos.
 
 **Links Úteis**:
 
 - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
 - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
-## User Flow
+## Protótipo interativo
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-rdep-1/assets/78915270/78280335-55eb-4153-9dc7-ca555114be58)
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
-
-**Links Úteis**:
-
-- [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-- [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-- [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
-
-## Wireframes
-
-Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
-
-**Links Úteis**:
-
-- [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-- [Figma](https://www.figma.com/)
-- [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-- [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
+## User Flow/Wireframe
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387200-rdep-1/assets/78915270/d63cb0dc-fbab-4349-bcd1-395e7b5adbae)
 
 ## Gestão de Projetos
 
- Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
+### Metodologias Ágeis
 
-Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+Para a gestão do projeto, utilizamos metodologias ágeis, que priorizam a flexibilidade e a colaboração. Essas metodologias nos permitem adaptar rapidamente às mudanças e manter o foco nas necessidades do cliente.
 
-**Links Úteis**:
+### Processo de Trabalho
 
-- [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-- [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-- [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-- [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-- [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+#### Design Thinking
+
+O processo de Design Thinking foi fundamental para entender as necessidades dos usuários e encontrar soluções criativas. Ele se dividiu nas seguintes etapas:
+
+1. **Abordagem**
+   - Entendimento do problema e do contexto.
+   - Coleta de informações por meio de entrevistas e observação.
+
+2. **Ideação**
+   - Brainstorming para geração de ideias.
+   - Seleção das melhores soluções com base nos insights obtidos.
+
+3. **Prototipagem**
+   - Criação de protótipos rápidos para testar as ideias.
+   - Iterações baseadas no feedback dos usuários.
+
+#### Framework Scrum
+
+Implementamos o Scrum para organizar o desenvolvimento do projeto, estruturado da seguinte forma:
+
+- **Desenvolvedores**
+- **Sprints**
+
+#### Ciclo de Sprints
+
+O desenvolvimento foi dividido em ciclos de Sprints de quatro semanas, cada um com as seguintes fases:
+
+1. **Planejamento da Sprint**
+   - Definição das metas e das tarefas a serem concluídas.
+   - Estimativa de tempo para cada tarefa.
+
+2. **Reuniões Diárias (Daily Stand-ups)**
+   - Reuniões curtas para discutir o progresso e os desafios.
+   - Alinhamento das atividades do dia.
+
+3. **Revisão da Sprint**
+   - Demonstração das funcionalidades concluídas.
+   - Feedback dos stakeholders.
+
+4. **Retrospectiva da Sprint**
+   - Avaliação do que funcionou bem e o que pode ser melhorado.
+   - Identificação de ações para as próximas Sprints.
+
+### Ferramentas Utilizadas
+
+Para o acompanhamento do projeto e a comunicação da equipe, utilizamos as seguintes ferramentas:
+
+- **Whatsapp**
+  - Gestão de tarefas e visualização do fluxo de trabalho.
+  - Comunicação em tempo real.
+  - Canais específicos para discussões de tópicos relevantes.
+  - Armazenamento e compartilhamento de documentos.
+
+- **Miro**
+  - Colaboração em tempo real em arquivos. 
+
+### Gestão de Configuração com GitHub
+
+O GitHub foi a plataforma escolhida para o controle de versão do projeto. As práticas incluíram:
+
+- **Branches**
+  - Uso de branches para desenvolvimento de novas funcionalidades e correção de bugs.
+  - Padronização de nomes para facilitar a identificação (ex.: `feat: nome da funcionalidade`, `fix: descricao do bug corrigido`, `docs: alteração ou adição de documentação`).
+
+- **Commits**
+  - Mensagens de commit claras e descritivas.
+  - Commits frequentes para registrar o progresso do trabalho.
+
+## Desenvolvimento
+
+### Tecnologias Utilizadas
+- HTML: Estruturação;
+- CSS: Estiilização;
+- JavaScript: Funcionalidade e interatividade.
