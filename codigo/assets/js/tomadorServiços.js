@@ -74,3 +74,7 @@ function loadCustomization() {
 window.onload = function() {
   loadCustomization();
 };
+
+function viewProfile(candidateName) {
+  // Redirecionar ou exibir perfil do
+}

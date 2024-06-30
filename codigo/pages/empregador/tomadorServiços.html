@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Vagas - Empresa</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="/codigo/assets/css/tomadorServiços.css">
+  <script defer src="/codigo/assets/js/tomadorServiços.js"></script>
 </head>
 <body>
   <header>
@@ -34,6 +34,7 @@
       </div>
       <div id="vagas-abertas" class="tab-content">
         <h2>Vagas Abertas</h2>
+        <button class="button" onclick="window.location.href='/codigo/pages/empregador/cadastro-vagas.html'">Cadastrar Nova Vaga</button>
         <div class="job-card">
           <h3>Desenvolvedor Front-end</h3>
           <p>Serviço: Desenvolvimento de aplicações web.</p>
@@ -94,11 +95,11 @@
       <h2>Análises de Aplicações</h2>
       <h3 id="job-title"></h3>
       <ul id="application-list">
-        <li>Nome: João Silva - Escolaridade: Superior completo em TI - Local: São Paulo, SP</li>
-        <li>Nome: Maria Souza - Escolaridade: Superior completo em Design - Local: Rio de Janeiro, RJ</li>
-        <li>Nome: Pedro Oliveira - Escolaridade: Superior completo em TI - Local: Belo Horizonte, MG</li>
-        <li>Nome: Ana Paula - Escolaridade: Superior completo em Administração - Local: Brasília, DF</li>
-        <li>Nome: Carlos Mendes - Escolaridade: Superior completo em Engenharia - Local: Salvador, BA</li>
+        <li>Nome: João Silva - Escolaridade: Superior completo em TI - Local: São Paulo, SP <button onclick="viewProfile('João Silva')">Ver Perfil</button></li>
+        <li>Nome: Maria Souza - Escolaridade: Superior completo em Design - Local: Rio de Janeiro, RJ <button onclick="viewProfile('Maria Souza')">Ver Perfil</button></li>
+        <li>Nome: Pedro Oliveira - Escolaridade: Superior completo em TI - Local: Belo Horizonte, MG <button onclick="viewProfile('Pedro Oliveira')">Ver Perfil</button></li>
+        <li>Nome: Ana Paula - Escolaridade: Superior completo em Administração - Local: Brasília, DF <button onclick="viewProfile('Ana Paula')">Ver Perfil</button></li>
+        <li>Nome: Carlos Mendes - Escolaridade: Superior completo em Engenharia - Local: Salvador, BA <button onclick="viewProfile('Carlos Mendes')">Ver Perfil</button></li>
       </ul>
     </div>
     <div id="profile-content" class="profile-content">
