@@ -58,38 +58,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
       userData.sexo = document.getElementById('oficialSexo').value;
       userData.endereco = document.getElementById('oficialEndereco').value;
   }
-
-//   async function buscarEndereco(endereco) {
-//     const cep = document.getElementById('cep').value.replace('-', '');
-
-//     if (!cep || !/^\d{8}$/.test(cep)) {
-//         alert('Por favor, insira um CEP válido.');
-//         return;
-//     }
-
-//     try {
-//         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-
-//         if (!response.ok) {
-//             throw new Error('Erro ao buscar o endereço.');
-//         }
-
-//         const data = await response.json();
-
-//         if (data.erro) {
-//             throw new Error('CEP não encontrado.');
-//         }
-
-//         document.getElementById('clienteRua').value = data.logradouro;
-//         document.getElementById('clienteBairro').value = data.bairro;
-//         document.getElementById('clienteCidade').value = data.localidade;
-//         document.getElementById('clienteEstado').value = data.uf;
-//         document.getElementById('clientePais').value = 'Brasil';
-//     } catch (error) {
-//         alert(error.message);
-//       }
-// }
-
+  
   // Armazenar dados de cadastro no localStorage
   var storedUsers = JSON.parse(localStorage.getItem('users')) || {};
   var userKey = userType + '_' + username;
@@ -103,11 +72,11 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
       // Redirecionar ou executar ações específicas para cada tipo de usuário
       if (userType === 'cliente') {
-          window.location.href = 'cliente_dashboard.html';
+          window.location.href = '/codigo/pages/dashboards/cliente_dashboard.html';
       } else if (userType === 'empregador') {
-          window.location.href = 'empregador_dashboard.html';
+          window.location.href = '/codigo/pages/dashboards/empregador_dashboard.html';
       } else if (userType === 'oficial') {
-          window.location.href = '/codigo/pages/dashboard_oficial.html';
+          window.location.href = '/codigo/pages/dashboards/dashboard_oficial.html';
       }
   }
 });

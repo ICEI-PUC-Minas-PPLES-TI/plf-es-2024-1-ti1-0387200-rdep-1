@@ -9,57 +9,6 @@ body {
   color: #333;
 }
 
-/* Navbar Styles */
-.navbar {
-  background-color: #4caf50;
-  overflow: hidden;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar .auth-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.navbar .auth-buttons button,
-.navbar .nav-links a {
-  color: #fff;
-  text-align: center;
-  padding: 10px 20px;
-  text-decoration: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  border-radius: 4px;
-}
-
-.navbar .auth-buttons button:hover,
-.navbar .nav-links a:hover {
-  background-color: #45a049;
-}
-
-/* Header Styles */
-header {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #eee;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 36px;
-  color: #4caf50;
-}
-
-header p {
-  font-size: 18px;
-  color: #666;
-}
-
 /* Section Styles */
 section {
   padding: 20px;
