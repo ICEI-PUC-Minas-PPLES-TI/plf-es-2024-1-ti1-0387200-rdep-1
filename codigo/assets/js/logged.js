@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
         <li class="nav-item active">
           <a class="nav-link" href="#">Inicio</a>
         </li>
-        <li class="nav-item active">
-            <a class="nav-link" href="/codigo/pages/empregador/visualizar-vagas.html">Vagas</a>
-          </li>
           <li class="nav-item active">
             <a class="nav-link" href="/codigo/pages/treinamentos/treinamentos.html">Treinamentos</a>
           </li>

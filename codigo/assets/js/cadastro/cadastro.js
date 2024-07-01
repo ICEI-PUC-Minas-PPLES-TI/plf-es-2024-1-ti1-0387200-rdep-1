@@ -103,7 +103,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
       // Redirecionar ou executar ações específicas para cada tipo de usuário
       if (userType === 'cliente') {
-          window.location.href = 'cliente_dashboard.html';
+          window.location.href = 'codigo/cliente_dashboard.html';
       } else if (userType === 'empregador') {
           window.location.href = 'empregador_dashboard.html';
       } else if (userType === 'oficial') {
