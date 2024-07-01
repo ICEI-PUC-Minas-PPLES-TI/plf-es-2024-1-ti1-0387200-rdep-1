@@ -107,7 +107,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
       } else if (userType === 'empregador') {
           window.location.href = 'empregador_dashboard.html';
       } else if (userType === 'oficial') {
-          window.location.href = 'oficial_dashboard.html';
+          window.location.href = '/codigo/pages/dashboard_oficial.html';
       }
   }
 });
