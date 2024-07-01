@@ -39,7 +39,12 @@ body {
 
 .navbar .auth-buttons button:hover,
 .navbar .nav-links a:hover {
-  background-color: #45a049;
+  background-color: #45A049;
+}
+
+.auth-buttons button a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Header Styles */

@@ -23,7 +23,6 @@ document.getElementById('registerUserType').addEventListener('change', function(
 });
 
 document.getElementById('registerForm').addEventListener('submit', function(event) {
-<<<<<<< HEAD
   event.preventDefault();
 
   var userType = document.getElementById('registerUserType').value;
@@ -120,7 +119,6 @@ document.getElementById('registerForm').addEventListener('submit', function(even
           window.location.href = 'oficial_dashboard.html';
       }
   }
-=======
     event.preventDefault();
 
     var userType = document.getElementById('registerUserType').value;
@@ -208,7 +206,6 @@ document.getElementById('registerForm').addEventListener('submit', function(even
             window.location.href = 'oficial_dashboard.html';
         }
     }
->>>>>>> 416b6b3cc7d041321b0580f7c52305c41553af4f
 });
 
 async function buscarEndereco(cepId) {
