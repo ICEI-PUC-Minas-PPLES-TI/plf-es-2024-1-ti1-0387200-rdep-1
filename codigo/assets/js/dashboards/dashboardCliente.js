@@ -28,5 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('avatarIcon').addEventListener('click', function() {
-  window.location.href = 'perfil.html';
+  window.location.href = "codigo/pages/perfil.html";
 });

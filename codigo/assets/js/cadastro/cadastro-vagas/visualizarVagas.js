@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function formatFormData(data) {
       return `
         <h3>Vaga ${data['titulo-vaga']}</h3>
-        <p><strong>ID da Vaga:</strong> ${data.id}</p>
         <p><strong>Sobre a Vaga:</strong> ${data['sobre-a-vaga']}</p>
-        <p><strong>Benefício 1:</strong> ${data['beneficio1']}</p>
-        <p><strong>Benefício 2:</strong> ${data['beneficio2']}</p>
-        <p><strong>Benefício 3:</strong> ${data['beneficio3']}</p>
+        <p><strong>Salario :</strong> ${data['salario']}</p>
+        <p><strong>Escolaridade :</strong> ${data['escolaridade']}</p>
+        <p><strong>Benefício :</strong> ${data['beneficio']}</p>
+        <p><strong>Local :</strong> ${data['local']}</p>
       `;
     }
   

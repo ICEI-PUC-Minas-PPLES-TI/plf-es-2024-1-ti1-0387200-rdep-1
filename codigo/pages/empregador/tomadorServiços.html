@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal de Vagas - Empresa</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="/codigo/assets/css/tomadorServiços.css">
+  <script defer src="/codigo/assets/js/tomadorServiços.js"></script>
 </head>
 <body>
   <header>
@@ -34,73 +34,52 @@
       </div>
       <div id="vagas-abertas" class="tab-content">
         <h2>Vagas Abertas</h2>
-        <div class="job-card">
-          <h3>Desenvolvedor Front-end</h3>
-          <p>Serviço: Desenvolvimento de aplicações web.</p>
-          <p>Salário: R$ 8.000,00</p>
-          <p>Escolaridade: Superior completo em áreas relacionadas.</p>
-          <p>Local: São Paulo, SP</p>
-          <p>Benefícios: Vale Transporte, Vale Refeição, Assistência Médica.</p>
-          <p>Descrição: Responsável pelo desenvolvimento e manutenção de interfaces web.</p>
-          <button class="button" onclick="openAnalises('Desenvolvedor Front-end')">Ver Aplicações</button>
-        </div>
-        <div class="job-card">
-          <h3>Designer UX/UI</h3>
-          <p>Serviço: Design de interfaces e experiência do usuário.</p>
-          <p>Salário: R$ 7.000,00</p>
-          <p>Escolaridade: Superior completo em áreas relacionadas.</p>
-          <p>Local: Rio de Janeiro, RJ</p>
-          <p>Benefícios: Vale Transporte, Vale Refeição, Assistência Médica.</p>
-          <p>Descrição: Criar designs intuitivos e visualmente atraentes.</p>
-          <button class="button" onclick="openAnalises('Designer UX/UI')">Ver Aplicações</button>
+        <button class="button" onclick="openModal()">Cadastrar Nova Vaga</button>
+        <div id="job-list">
+          <!-- Vagas serão inseridas aqui dinamicamente -->
         </div>
       </div>
       <div id="historico" class="tab-content">
         <h2>Histórico de Vagas</h2>
-        <div class="job-card">
-          <h3>Desenvolvedor Back-end</h3>
-          <p>Serviço: Desenvolvimento de sistemas e APIs.</p>
-          <p>Salário: R$ 9.000,00</p>
-          <p>Escolaridade: Superior completo em áreas relacionadas.</p>
-          <p>Local: São Paulo, SP</p>
-          <p>Benefícios: Vale Transporte, Vale Refeição, Assistência Médica.</p>
-          <p>Descrição: Desenvolvimento de back-end utilizando tecnologias modernas.</p>
-          <p>Fechada em: 01/05/2023</p>
-        </div>
-        <div class="job-card">
-          <h3>Analista de Dados</h3>
-          <p>Serviço: Análise de dados e geração de relatórios.</p>
-          <p>Salário: R$ 7.500,00</p>
-          <p>Escolaridade: Superior completo em áreas relacionadas.</p>
-          <p>Local: Belo Horizonte, MG</p>
-          <p>Benefícios: Vale Transporte, Vale Refeição, Assistência Médica.</p>
-          <p>Descrição: Análise de grandes volumes de dados e criação de dashboards.</p>
-          <p>Fechada em: 15/04/2023</p>
-        </div>
-        <div class="job-card">
-          <h3>Gerente de Projetos</h3>
-          <p>Serviço: Gestão de projetos e equipes.</p>
-          <p>Salário: R$ 12.000,00</p>
-          <p>Escolaridade: Superior completo em áreas relacionadas.</p>
-          <p>Local: Brasília, DF</p>
-          <p>Benefícios: Vale Transporte, Vale Refeição, Assistência Médica.</p>
-          <p>Descrição: Planejamento, execução e acompanhamento de projetos.</p>
-          <p>Fechada em: 30/03/2023</p>
+        <div id="historico-list">
+          <!-- Histórico de vagas será inserido aqui dinamicamente -->
         </div>
       </div>
     </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Cadastrar Nova Vaga</h2>
+        <form id="vaga-form cadastro-vagas-form">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo-vaga" name="titulo-vaga" required>
+          <label for="servico">Serviço:</label>
+          <input type="text" id="servico" name="servico" required>
+          <label for="salario">Salário:</label>
+          <input type="text" id="salario" name="salario" required>
+          <label for="escolaridade">Escolaridade:</label>
+          <input type="text" id="escolaridade" name="escolaridade" required>
+          <label for="local">Local:</label>
+          <input type="text" id="local" name="local" required>
+          <label for="beneficios">Benefícios:</label>
+          <input type="text" id="beneficio" name="beneficio" required>
+          <label for="descricao">Descrição:</label>
+          <textarea id="sobre-a-vaga" name="sobre-a-vaga" required></textarea>
+          <button type="submit" class="button">Adicionar Vaga</button>
+        </form>
+      </div>
+    </div>
+
     <div id="analises-content" class="profile-content">
       <button onclick="closeAnalises()">Voltar</button>
       <h2>Análises de Aplicações</h2>
       <h3 id="job-title"></h3>
       <ul id="application-list">
-        <li>Nome: João Silva - Escolaridade: Superior completo em TI - Local: São Paulo, SP</li>
-        <li>Nome: Maria Souza - Escolaridade: Superior completo em Design - Local: Rio de Janeiro, RJ</li>
-        <li>Nome: Pedro Oliveira - Escolaridade: Superior completo em TI - Local: Belo Horizonte, MG</li>
-        <li>Nome: Ana Paula - Escolaridade: Superior completo em Administração - Local: Brasília, DF</li>
-        <li>Nome: Carlos Mendes - Escolaridade: Superior completo em Engenharia - Local: Salvador, BA</li>
+        <!-- Lista de candidatos -->
       </ul>
     </div>
+
     <div id="profile-content" class="profile-content">
       <h2>Perfil da Empresa</h2>
       <img src="empresa_perfil.png" alt="Logo da Empresa" class="profile-img">
@@ -109,6 +88,7 @@
       <p id="display-company-sector">Setor: Tecnologia</p>
       <span class="customize-span" onclick="openCustomization()">Personalizar</span>
     </div>
+
     <div id="customization-content" class="profile-content">
       <button onclick="closeCustomization()">Voltar</button>
       <h2>Personalização</h2>

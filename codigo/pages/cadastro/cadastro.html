@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style href = "/codigo/assets/css/cadastro/cadastro.css"></style>
+    
     <style>
         body {
             display: flex;
@@ -25,138 +27,253 @@
             display: none;
         }
     </style>
+    <link rel="stylesheet" href="/codigo/assets/css/cadastro/cadastro.css">
 </head>
 <body>
-
-<div class="form-container">
-    <form id="registerForm">
-        <h2 class="text-center">Cadastro</h2>
-        <div class="form-group">
-            <label for="registerUserType">Tipo de Usuário</label>
-            <select class="form-control" id="registerUserType" required>
-                <option value="">Selecione o Tipo de Usuário</option>
-                <option value="cliente">Cliente</option>
-                <option value="empregador">Empregador</option>
-                <option value="oficial">Oficial de Justiça</option>
-            </select>
-        </div>
-
-        <div id="clienteFields" class="hidden">
+    <div class="form-container">
+        <form id="registerForm">
+            <h2 class="text-center">Cadastro</h2>
             <div class="form-group">
-                <label for="clienteNome">Nome</label>
-                <input type="text" class="form-control" id="clienteNome">
-            </div>
-            <div class="form-group">
-                <label for="clienteRg">RG</label>
-                <input type="text" class="form-control" id="clienteRg">
-            </div>
-            <div class="form-group">
-                <label for="clienteDataNascimento">Data de Nascimento</label>
-                <input type="date" class="form-control" id="clienteDataNascimento">
-            </div>
-            <div class="form-group">
-                <label for="clienteEstadoCivil">Estado Civil</label>
-                <input type="text" class="form-control" id="clienteEstadoCivil">
-            </div>
-            <div class="form-group">
-                <label for="clienteTelefone">Telefone</label>
-                <input type="tel" class="form-control" id="clienteTelefone">
-            </div>
-            <div class="form-group">
-                <label for="clienteSexo">Sexo</label>
-                <select class="form-control" id="clienteSexo">
-                    <option value="">Selecione o Sexo</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
+                <label for="registerUserType">Tipo de Usuário</label>
+                <select class="form-control" id="registerUserType" required>
+                    <option value="">Selecione o Tipo de Usuário</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="empregador">Empregador</option>
+                    <option value="oficial">Oficial de Justiça</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="clienteEndereco">Endereço</label>
-                <input type="text" class="form-control" id="clienteEndereco">
-            </div>
-            <div class="form-group">
-                <label for="clienteMatriculaDetento">Matrícula de Detento</label>
-                <input type="text" class="form-control" id="clienteMatriculaDetento">
-            </div>
-            <div class="form-group">
-                <label for="clienteEmail">Email</label>
-                <input type="email" class="form-control" id="clienteEmail">
-            </div>
-        </div>
 
-        <div id="empregadorFields" class="hidden">
-            <div class="form-group">
-                <label for="empregadorRazaoSocial">Razão Social</label>
-                <input type="text" class="form-control" id="empregadorRazaoSocial">
+            <div id="clienteFields" class="hidden">
+                <!-- cliente fields -->
+                <div class="form-group">
+                    <label for="clienteNome">Nome</label>
+                    <input type="text" class="form-control" id="clienteNome">
+                </div>
+                <div class="form-group">
+                    <label for="clienteRg">RG</label>
+                    <input type="text" class="form-control" id="clienteRg">
+                </div>
+                <div class="form-group">
+                    <label for="clienteDataNascimento">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="clienteDataNascimento">
+                </div>
+                <div class="form-group">
+                    <label for="clienteEstadoCivil">Estado Civil</label>
+                    <input type="text" class="form-control" id="clienteEstadoCivil">
+                </div>
+                <div class="form-group">
+                    <label for="clienteTelefone">Telefone</label>
+                    <input type="tel" class="form-control" id="clienteTelefone">
+                </div>
+                <div class="form-group">
+                    <label for="clienteSexo">Sexo</label>
+                    <select class="form-control" id="clienteSexo">
+                        <option value="">Selecione o Sexo</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="clienteCep">CEP</label>
+                    <input type="text" class="form-control" id="clienteCep" name="clienteCep" required pattern="\d{5}-\d{3}" title="Formato: 00000-000">
+                    <button type="button" class="btn btn-primary mt-2" onclick="buscarEndereco('clienteCep')">Buscar Endereço</button>
+                </div>
+                <div class="form-group">
+                    <label for="rua">Rua</label>
+                    <input type="text" class="form-control" id="rua" name="rua" required>
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" id="numero" name="numero" required>
+                </div>
+                <div class="form-group">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" name="complemento">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" name="bairro" required>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" id="cidade" name="cidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select class="form-control" id="estado" name="estado" required>
+                        <option value="">Selecione o estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="clienteMatriculaDetento">Matrícula de Detento</label>
+                    <input type="text" class="form-control" id="clienteMatriculaDetento">
+                </div>
+                <div class="form-group">
+                    <label for="clienteEmail">Email</label>
+                    <input type="email" class="form-control" id="clienteEmail">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="empregadorCnpj">CNPJ</label>
-                <input type="text" class="form-control" id="empregadorCnpj">
-            </div>
-            <div class="form-group">
-                <label for="empregadorCnae">CNAE</label>
-                <input type="text" class="form-control" id="empregadorCnae">
-            </div>
-            <div class="form-group">
-                <label for="empregadorEndereco">Endereço</label>
-                <input type="text" class="form-control" id="empregadorEndereco">
-            </div>
-            <div class="form-group">
-                <label for="empregadorEmail">Email</label>
-                <input type="email" class="form-control" id="empregadorEmail">
-            </div>
-        </div>
 
-        <div id="oficialFields" class="hidden">
-            <div class="form-group">
-                <label for="oficialNome">Nome</label>
-                <input type="text" class="form-control" id="oficialNome">
+            <div id="empregadorFields" class="hidden">
+                <!-- empregador fields -->
+                <div class="form-group">
+                    <label for="empregadorRazaoSocial">Razão Social</label>
+                    <input type="text" class="form-control" id="empregadorRazaoSocial">
+                </div>
+                <div class="form-group">
+                    <label for="empregadorCnpj">CNPJ</label>
+                    <input type="text" class="form-control" id="empregadorCnpj">
+                </div>
+                <div class="form-group">
+                    <label for="empregadorCnae">CNAE</label>
+                    <input type="text" class="form-control" id="empregadorCnae">
+                </div>
+                <div class="form-group">
+                    <label for="empregadorCep">CEP</label>
+                    <input type="text" class="form-control" id="empregadorCep" name="empregadorCep" required pattern="\d{8}" title="Formato: 00000000">
+                    <button type="button" class="btn btn-primary mt-2" onclick="buscarEndereco('empregadorCep')">Buscar Endereço</button>
+                </div>
+                <div class="form-group">
+                    <label for="rua">Rua</label>
+                    <input type="text" class="form-control" id="ruaTS" name="ruaTS" required>
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" id="numeroTS" name="numeroTS" required>
+                </div>
+                <div class="form-group">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" class="form-control" id="complementoTS" name="complementoTS">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" id="bairroTS" name="bairroTS" required>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" id="cidadeTS" name="cidadeTS" required>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select class="form-control" id="estadoTS" name="estadoTS" required>
+                        <option value="">Selecione o estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="empregadorEmail">Email</label>
+                    <input type="email" class="form-control" id="empregadorEmail">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="oficialCarteiraFuncional">Carteira Funcional</label>
-                <input type="text" class="form-control" id="oficialCarteiraFuncional">
-            </div>
-            <div class="form-group">
-                <label for="oficialDataNascimento">Data de Nascimento</label>
-                <input type="date" class="form-control" id="oficialDataNascimento">
-            </div>
-            <div class="form-group">
-                <label for="oficialTelefone">Telefone</label>
-                <input type="tel" class="form-control" id="oficialTelefone">
-            </div>
-            <div class="form-group">
-                <label for="oficialSexo">Sexo</label>
-                <select class="form-control" id="oficialSexo">
-                    <option value="">Selecione o Sexo</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="oficialEndereco">Endereço</label>
-                <input type="text" class="form-control" id="oficialEndereco">
-            </div>
-        </div>
 
-        <div class="form-group">
-            <label for="registerUsername">Usuário</label>
-            <input type="text" class="form-control" id="registerUsername" placeholder="Nome de Usuário" required>
-        </div>
-        <div class="form-group">
-            <label for="registerPassword">Senha</label>
-            <input type="password" class="form-control" id="registerPassword" placeholder="Senha" required>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
-        </div>
-        <p class="text-center"><a href="/codigo/pages/login/login.html">Já tem uma conta? Faça login</a></p>
-    </form>
-</div>
+            <div id="oficialFields" class="hidden">
+                <!-- oficial fields -->
+                <div class="form-group">
+                    <label for="oficialNome">Nome</label>
+                    <input type="text" class="form-control" id="oficialNome">
+                </div>
+                <div class="form-group">
+                    <label for="oficialCarteiraFuncional">Carteira Funcional</label>
+                    <input type="text" class="form-control" id="oficialCarteiraFuncional">
+                </div>
+                <div class="form-group">
+                    <label for="oficialDataNascimento">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="oficialDataNascimento">
+                </div>
+                <div class="form-group">
+                    <label for="oficialTelefone">Telefone</label>
+                    <input type="tel" class="form-control" id="oficialTelefone">
+                </div>
+                <div class="form-group">
+                    <label for="oficialSexo">Sexo</label>
+                    <select class="form-control" id="oficialSexo">
+                        <option value="">Selecione o Sexo</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="oficialEndereco">Endereço</label>
+                    <input type="text" class="form-control" id="oficialEndereco">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="registerUsername">Usuário</label>
+                <input type="text" class="form-control" id="registerUsername" placeholder="Nome de Usuário" required>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Senha</label>
+                <input type="password" class="form-control" id="registerPassword" placeholder="Senha" required>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">Confirmar Senha</label>
+                <input type="password" class="form-control" id="registerPassword2" placeholder="Confirmar Senha" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+            </div>
+            <p class="text-center"><a href="/codigo/pages/login/login.html">Já tem uma conta? Faça login</a></p>
+        </form>
+    </div>
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="/codigo/assets/js/cadastro/cadastro.js"></script>
-
 
 </body>
 </html>

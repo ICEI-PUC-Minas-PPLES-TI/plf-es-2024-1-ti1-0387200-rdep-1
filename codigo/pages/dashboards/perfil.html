@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuário</title>
+  <link rel="stylesheet" href="/codigo/assets/css/perfil.css">
+  <script defer src="/codigo/assets/js/perfil.js"></script>
+</head>
+  <header>
+    <div class="profile-info container">
+      <div class="user-details">
+        <h1>Olá Usuário</h1>
+      </div>
+      <h2 id="rdEP" onclick="location.href='index.html'" style="cursor: pointer;">RdEP</h2>
+      <img src="avatar.jpg" alt="Avatar do Usuário" class="avatar">
+    </div>
+
+  </header>
+<body>
+  <div class="tabs">
+    <button class="tab-link active" onclick="openTab(event, 'for-you')">Para Você</button>
+    <button class="tab-link" onclick="openTab(event, 'curriculum')">Currículo</button>
+    <button class="tab-link" onclick="openTab(event, 'profile')">Perfil</button>
+  </div>
+
+  <div id="for-you" class="tab-content active">
+    <h2>Para Você</h2>
+    <div class="category">
+      <h3>Serviços</h3>
+      <div class="card-container">
+        <div class="job-card">
+          <h3>Desenvolvedor Full Stack</h3>
+          <p>Empresa: Tech Innovators</p>
+          <p>Salário: $80,000/ano</p>
+          <p>Local: São Francisco, CA</p>
+          <p>Data: 01/07/2024</p>
+          <p>Descrição: Desenvolvimento de aplicações web usando tecnologias modernas.</p>
+          <button class="apply-btn" data-modal="job-modal">Aplicar-se</button>
+        </div>
+        <div class="job-card">
+          <h3>Gerente de Projetos</h3>
+          <p>Empresa: Project Corp</p>
+          <p>Salário: $90,000/ano</p>
+          <p>Local: Nova York, NY</p>
+          <p>Data: 15/07/2024</p>
+          <p>Descrição: Gestão de projetos de TI com metodologias ágeis.</p>
+          <button class="apply-btn" data-modal="job-modal">Aplicar-se</button>
+        </div>
+        <div class="job-card">
+          <h3>Analista de Marketing</h3>
+          <p>Empresa: MarketGurus</p>
+          <p>Salário: $60,000/ano</p>
+          <p>Local: Miami, FL</p>
+          <p>Data: 20/07/2024</p>
+          <p>Descrição: Planejamento e execução de campanhas de marketing digital.</p>
+          <button class="apply-btn" data-modal="job-modal">Aplicar-se</button>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h3>Cursos</h3>
+      <div class="card-container">
+        <div class="course-card">
+          <h3>Desenvolvimento Web com JavaScript</h3>
+          <p>Duração: 8 semanas</p>
+          <p>Modalidade: EaD</p>
+          <p>Local: Online</p>
+          <button class="enroll-btn" data-modal="course-modal">Inscrever-se</button>
+        </div>
+        <div class="course-card">
+          <h3>Machine Learning com Python</h3>
+          <p>Duração: 10 semanas</p>
+          <p>Modalidade: Presencial</p>
+          <p>Local: São Paulo, SP</p>
+          <button class="enroll-btn" data-modal="course-modal">Inscrever-se</button>
+        </div>
+        <div class="course-card">
+          <h3>Gestão de Projetos Ágeis</h3>
+          <p>Duração: 6 semanas</p>
+          <p>Modalidade: EaD</p>
+          <p>Local: Online</p>
+          <button class="enroll-btn" data-modal="course-modal">Inscrever-se</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="job-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="job-modal">&times;</span>
+      <h2>Aplicar-se a Vaga</h2>
+      <form>
+        <label for="full-name">Nome Completo</label>
+        <input type="text" id="full-name" name="full-name" required>
+
+        <label for="experience">Experiência Profissional</label>
+        <textarea id="experience" name="experience" rows="4" required></textarea>
+
+        <label for="bio">Biografia</label>
+        <textarea id="bio" name="bio" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal para Inscrever-se em Curso -->
+  <div id="course-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="course-modal">&times;</span>
+      <h2>Inscrever-se no Curso</h2>
+      <form>
+        <label for="full-name-course">Nome Completo</label>
+        <input type="text" id="full-name-course" name="full-name-course" required>
+
+        <label for="availability">Disponibilidade de Horário</label>
+        <textarea id="availability" name="availability" rows="2" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <div id="curriculum" class="tab-content">
+    <h2>Currículo</h2>
+    <div class="category">
+      <h3>Educação</h3>
+      <section class="summary">
+        <ul id="course-list">
+          <li>
+            <p><strong>Instituição:</strong> Universidade XYZ</p>
+            <p><strong>Nível do Curso:</strong> Bacharelado</p>
+            <p><strong>Curso:</strong> Ciência da Computação</p>
+            <p><strong>Data de Início:</strong> 01/01/2015</p>
+            <p><strong>Data de Término:</strong> 01/12/2019</p>
+          </li>
+          <li>
+            <p><strong>Instituição:</strong> Instituto ABC</p>
+            <p><strong>Nível do Curso:</strong> Especialização</p>
+            <p><strong>Curso:</strong> Marketing Digital</p>
+            <p><strong>Data de Início:</strong> 01/03/2020</p>
+            <p><strong>Data de Término:</strong> 01/03/2021</p>
+          </li>
+          <li>
+            <p><strong>Instituição:</strong> Udacity</p>
+            <p><strong>Nível do Curso:</strong> Certificação</p>
+            <p><strong>Curso:</strong> Data Science</p>
+            <p><strong>Data de Início:</strong> 01/06/2021</p>
+            <p><strong>Data de Término:</strong> 01/12/2021</p>
+          </li>
+        </ul>
+      </section>
+      <button id="add-education-btn">Adicionar Estudos</button>
+    </div>
+    <div class="category">
+      <h3>Profissional</h3>
+      <section class="professional-experiences">
+        <ul id="job-list">
+          <li>
+            <p><strong>Empresa:</strong> Tech Innovators</p>
+            <p><strong>Cargo:</strong> Desenvolvedor Full Stack</p>
+            <p><strong>Data de Início:</strong> 01/01/2022</p>
+            <p><strong>Data de Término:</strong> 01/12/2023</p>
+          </li>
+          <li>
+            <p><strong>Empresa:</strong> Project Corp</p>
+            <p><strong>Cargo:</strong> Gerente de Projetos</p>
+            <p><strong>Data de Início:</strong> 01/01/2018</p>
+            <p><strong>Data de Término:</strong> 01/12/2021</p>
+          </li>
+          <li>
+            <p><strong>Empresa:</strong> MarketGurus</p>
+            <p><strong>Cargo:</strong> Analista de Marketing</p>
+            <p><strong>Data de Início:</strong> 01/01/2020</p>
+            <p><strong>Data de Término:</strong> 01/12/2021</p>
+          </li>
+        </ul>
+      </section>
+      <button id="add-experience-btn">Adicionar Experiência Profissional</button>
+    </div>
+  </div>
+
+  <!-- Modal para Adicionar Estudos -->
+  <div id="educationModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="close-education-modal">&times;</span>
+      <h2>Adicionar Estudos</h2>
+      <form id="education-form">
+        <label for="institution">Instituição:</label>
+        <input type="text" id="institution" name="institution" required>
+
+        <label for="degree">Nível do Curso:</label>
+        <input type="text" id="degree" name="degree" required>
+
+        <label for="course">Curso:</label>
+        <input type="text" id="course" name="course" required>
+
+        <label for="start-date">Data de Início:</label>
+        <input type="date" id="start-date" name="start-date" required>
+
+        <label for="end-date">Data de Término:</label>
+        <input type="date" id="end-date" name="end-date" required>
+
+        <button type="submit">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal para Adicionar Experiência Profissional -->
+  <div id="experienceModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close" id="close-experience-modal">&times;</span>
+      <h2>Adicionar Experiência Profissional</h2>
+      <form id="experience-form">
+        <label for="company">Empresa:</label>
+        <input type="text" id="company" name="company" required>
+
+        <label for="role">Cargo:</label>
+        <input type="text" id="role" name="role" required>
+
+        <label for="start-date-experience">Data de Início:</label>
+        <input type="date" id="start-date-experience" name="start-date-experience" required>
+
+        <label for="end-date-experience">Data de Término:</label>
+        <input type="date" id="end-date-experience" name="end-date-experience" required>
+
+        <button type="submit">Adicionar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="profile" class="tab-content">
+    <h2>Perfil</h2>
+    <section class="profile-content">
+      <h3>Informações Pessoais</h3>
+      <p>Idade: 30 anos</p>
+      <p>Localização: São Paulo, SP</p>
+      <p>Interesses: Tecnologia, Marketing Digital</p>
+    </section>
+    <section class="profile-content">
+      <h3>Habilidades</h3>
+      <ul>
+        <li>Desenvolvimento Web</li>
+        <li>Gestão de Projetos</li>
+        <li>Análise de Dados</li>
+      </ul>
+    </section>
+  </div>
+
+  </div>
+
+  <script src="perfil.js"></script>
+</body>
+ 
+</html>

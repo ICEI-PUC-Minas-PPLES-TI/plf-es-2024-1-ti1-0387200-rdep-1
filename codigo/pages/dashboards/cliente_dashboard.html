@@ -6,6 +6,7 @@
       <title>RdEP Página Inicial</title>
       <link rel="stylesheet" href="/codigo/assets/css/dashboards/dashboard_cliente.css">
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<<<<<<< HEAD
       </head>
       <body>
           <div class="navbar">
@@ -92,4 +93,76 @@
                                 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
                                 </body>
+=======
+   </head>
+   <body>
+      <div class="navbar">
+         <div class="auth-buttons">
+            <button id="signUp">Cadastre-se</button>
+         </div>
+         <div class="auth-buttons">
+            <button id="loginBtn">Login</button>
+         </div>
+         <div class="nav-links" id="navLinks" style="display: none;">
+            <a href="#profile">Acesso ao Perfil</a>
+         </div>
+      </div>
+      <header>
+         <h1>Bem-vindo ao RdEP</h1>
+         <p>Sua porta de entrada para crescimento profissional e oportunidades.</p>
+      </header>
+      <section id="job-openings" class="storedDataList">
+         <h2>Vagas de Emprego</h2>
+         <div id="storedDataList"></div>
+      </section>
+      <section id="new-courses">
+         <h2>Novos Cursos Oferecidos</h2>
+         <div class="card">
+            <h3>Introdução ao Python</h3>
+            <p>Data de Início: 1º de Julho de 2024</p>
+            <p>Duração: 6 semanas</p>
+         </div>
+         <div class="card">
+            <h3>Fundamentos do Marketing Digital</h3>
+            <p>Data de Início: 10 de Julho de 2024</p>
+            <p>Duração: 8 semanas</p>
+         </div>
+         <div class="card">
+            <h3>Ciência de Dados com R</h3>
+            <p>Data de Início: 1º de Agosto de 2024</p>
+            <p>Duração: 10 semanas</p>
+         </div>
+      </section>
+      <section id="new-companies">
+         <h2>Novas Empresas Inscritas</h2>
+         <div class="storedDataListEmpresa"></div>
+      </section>
+      <div id="loginModal" class="modal">
+         <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <label for="userType">Tipo de Usuário</label>
+            <select id="userType" name="userType" required>
+               <option value="oficial">Oficial de Justiça</option>
+               <option value="tomador">Tomador de Serviços</option>
+               <option value="ex-presidiario">Ex-presidiário</option>
+            </select>
+            <form id="loginForm">
+               <label for="username">Email</label>
+               <input type="text" id="username" name="username" required>
+               <label for="password">Senha</label>
+               <input type="password" id="password" name="password" required>
+               <button type="submit">Login</button>
+            </form>
+            <p class="signup-link">Não tem uma conta? <a href="#">Cadastre-se</a></p>
+         </div>
+      </div>
+      <script src="/codigo/assets/js/dashboards/dashboardCliente.js"></script>
+      <script src="/codigo/assets/js/cadastro/cadastro-vagas/visualizarVagas.js"></script>
+      <script src="/codigo/assets/js/cadastro/visualizar-empregador/visualizarEmpregadores.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+   </body>
+>>>>>>> 416b6b3cc7d041321b0580f7c52305c41553af4f
 </html>
